@@ -1,21 +1,26 @@
 ---
 title: Marisol Quaye
 description:
-  The founding convenor, responsible for the course's shape and its weekly
-  teaching programme.
+  Convenor. Wrote the course after an audit of a research group's shared drive
+  found eleven files named for the same report and no way to rank them.
 affiliation: Slop University School of Invented Disciplines
 role: convenor
 email: marisol.quaye@slop.university
-contact: Email for course-level questions; use the weekly session for feedback on work.
+contact: Email for anything about the course as a whole. For feedback on a specific piece of work, bring it to the lab — it is faster and the files are in front of you.
 photo: ./marisol-quaye.avif
 photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
-<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+Convenor, and lecturer for the odd-numbered weeks: naming, copies and clones,
+the pre-software history, merge conflicts, sync, and provenance.
 
-Replace this entry. A people page carries a short bio and whatever a student
-needs in order to contact the right person for the right thing --- and nothing
-that will be stale by week 3.
+Came to this from records management rather than software. The course exists
+because an audit of one research group's shared drive turned up eleven files
+named for the same report, four of them containing the word final, and no
+procedure in the organisation capable of ranking them. The group was not
+careless. They had no field to write the answer in.
 
-Consultation hours, contact preferences and the escalation path (who to ask
-first, who to ask when that does not work) are the parts students actually read.
+Consultation is by appointment in the week after each assessment is returned.
+If you want to argue with a mark, bring the evidence rather than the
+disagreement — that is the same standard the assessments are graded against,
+and it works.
