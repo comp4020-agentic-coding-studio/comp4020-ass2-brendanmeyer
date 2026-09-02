@@ -2,42 +2,63 @@
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../assets/images/hero-home.avif";
+import heroImage from "../assets/images/hero-home.svg";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="Four overlapping document icons in flat gold and black line art, each labelled with a near-duplicate filename — Copy of report (2).docx, Untitled-3.docx, final_v2.docx, final_FINAL_revised2.docx — the front one circled with a stamp reading CURRENT."
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
+  <section class="opening-statement" aria-label="Opening statement">
+    <p class="opening-statement-kicker">Opening statement</p>
+    <p>There is no such thing as &ldquo;the file.&rdquo;</p>
+    <p>
+      There is the attachment you emailed. The copy in Downloads. The one you
+      renamed. The autosave. The version your collaborator edited. The PDF
+      you exported. The PDF they annotated. The copy stored in Drive. The
+      copy Drive created when syncing failed.
+    </p>
+    <p>This course studies what happens next.</p>
+  </section>
+
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Every week hands you a folder that already has too many files in it.
+    You inspect one — your own, or one staged to be misleading — and argue
+    for which copy counts. You reconstruct an edit history from timestamps
+    and metadata that contradict each other. You merge two versions of the
+    same document and write down what you cut, and why. You watch one file
+    survive five format conversions and mark the exact step where it
+    stopped being itself. Twelve weeks, four pieces of evidence, no essays.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    For anyone who has three files called <code>final</code> and no reliable
+    way to say which one to send. No programming background is assumed.
+    Comfort with ambiguity is not assumed either — the course does not
+    resolve it. Most weeks end on a decision, not an answer.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
+    <Card title="Lectures" href="/lectures/">
+      <p>The weekly argument, one core question at a time, with slides.</p>
+    </Card>
     <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
+      <p>
+        The weekly hands-on exercise: files to inspect, timelines to
+        reconstruct, conflicts to resolve.
+      </p>
     </Card>
     <Card title="Assessment" href="/assessments/">
       <p>What is marked, what it is worth, and when it is due.</p>
@@ -64,5 +85,29 @@ import { sessionLabels, siteConfig } from "../site-config";
     color: var(--at-text-secondary);
     background: var(--at-bg-alt);
     font-size: 0.9rem;
+  }
+
+  .opening-statement {
+    margin-block: 0 2rem;
+    padding: 1.25rem 1.5rem;
+    border-inline-start: 4px solid var(--at-primary);
+    background: var(--at-bg-alt);
+  }
+
+  .opening-statement p {
+    margin-block: 0.75rem;
+  }
+
+  .opening-statement p:first-of-type {
+    margin-block-start: 0;
+  }
+
+  .opening-statement-kicker {
+    margin-block-end: 1rem;
+    color: var(--at-text-secondary);
+    font-family: ui-monospace, "Courier New", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 </style>

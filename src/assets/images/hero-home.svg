@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="1600" height="720" role="img" aria-label="Four overlapping document icons, each labelled with a near-duplicate filename, the front one stamped CURRENT">
+  <rect width="1600" height="720" fill="#f2ead9" />
+
+  <!-- Copy of report (2).docx -->
+  <g transform="translate(620,430) rotate(-14)">
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" transform="translate(-4,-4)" fill="#f2ead9" stroke="#b97d1c" stroke-width="6" />
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" fill="#f2ead9" stroke="#1a1613" stroke-width="4" />
+    <line x1="-95" y1="-95" x2="70" y2="-95" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.5" />
+    <line x1="-95" y1="-55" x2="45" y2="-55" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.4" />
+    <text x="-125" y="148" font-family="'Courier New', Courier, monospace" font-size="26" fill="#1a1613">Copy of report (2).docx</text>
+  </g>
+
+  <!-- Untitled-3.docx -->
+  <g transform="translate(860,380) rotate(9)">
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" transform="translate(-4,-4)" fill="#f2ead9" stroke="#b97d1c" stroke-width="6" />
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" fill="#f2ead9" stroke="#1a1613" stroke-width="4" />
+    <line x1="-95" y1="-95" x2="70" y2="-95" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.5" />
+    <line x1="-95" y1="-55" x2="45" y2="-55" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.4" />
+    <text x="-125" y="148" font-family="'Courier New', Courier, monospace" font-size="26" fill="#1a1613">Untitled-3.docx</text>
+  </g>
+
+  <!-- final_v2.docx -->
+  <g transform="translate(1000,440) rotate(-6)">
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" transform="translate(-4,-4)" fill="#f2ead9" stroke="#b97d1c" stroke-width="6" />
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" fill="#f2ead9" stroke="#1a1613" stroke-width="4" />
+    <line x1="-95" y1="-95" x2="70" y2="-95" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.5" />
+    <line x1="-95" y1="-55" x2="45" y2="-55" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.4" />
+    <text x="-125" y="148" font-family="'Courier New', Courier, monospace" font-size="26" fill="#1a1613">final_v2.docx</text>
+  </g>
+
+  <!-- final_FINAL_revised2.docx (front) -->
+  <g transform="translate(830,360) rotate(3)">
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" transform="translate(-4,-4)" fill="#f2ead9" stroke="#b97d1c" stroke-width="6" />
+    <path d="M -130 -170 L 95 -170 L 130 -135 L 130 170 L -130 170 Z" fill="#f2ead9" stroke="#1a1613" stroke-width="4" />
+    <line x1="-95" y1="-95" x2="70" y2="-95" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.5" />
+    <line x1="-95" y1="-55" x2="45" y2="-55" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.4" />
+    <line x1="-95" y1="-15" x2="80" y2="-15" stroke="#1a1613" stroke-width="9" stroke-linecap="round" opacity="0.4" />
+    <text x="-125" y="148" font-family="'Courier New', Courier, monospace" font-size="26" fill="#1a1613" font-weight="bold">final_FINAL_revised2.docx</text>
+  </g>
+
+  <!-- CURRENT stamp -->
+  <g transform="translate(945,478) rotate(-16)">
+    <circle r="72" fill="none" stroke="#b97d1c" stroke-width="5" />
+    <circle r="58" fill="none" stroke="#b97d1c" stroke-width="3" />
+    <text x="0" y="9" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="24" font-weight="bold" letter-spacing="1" fill="#b97d1c">CURRENT</text>
+  </g>
+</svg>
