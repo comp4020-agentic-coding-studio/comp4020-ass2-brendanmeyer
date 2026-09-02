@@ -1,0 +1,86 @@
+---
+// A document-style version stamp, reused on every content page (syllabus,
+// weekly lecture/lab pages, assessment pages). Most pages are their own
+// first and only version — "Version 1.0 · Status: CURRENT" is simply true
+// for them. `history` is for the rare page that has actually been revised
+// (currently just the syllabus); don't invent a history a page doesn't have.
+export interface VersionHistoryEntry {
+  version: string;
+  note: string;
+}
+
+export interface Props {
+  version: string;
+  status?: "CURRENT" | "DRAFT";
+  history?: VersionHistoryEntry[];
+}
+
+const { version, status = "CURRENT", history } = Astro.props;
+const supersedes = history?.[0]?.version;
+---
+
+<div class="version-header">
+  <p class="version-header-line">
+    <span class="version-header-tag">Version {version}</span>
+    {supersedes && <span> · Supersedes v{supersedes}</span>}
+    <span>
+      {" "}
+      · Status:{" "}
+      <strong class:list={["version-header-status", `version-header-status--${status.toLowerCase()}`]}>
+        {status}
+      </strong>
+    </span>
+  </p>
+  {
+    history && history.length > 0 && (
+      <ul class="version-header-history">
+        {history.map((entry) => (
+          <li>
+            <span class="version-header-history-version">v{entry.version}</span> — {entry.note}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>
+
+<style>
+  .version-header {
+    margin-block: 0 2rem;
+    padding-block: var(--at-spacing-sm);
+    border-block: 1px solid var(--at-divider);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-sm);
+    color: var(--at-text-secondary);
+  }
+
+  .version-header-line {
+    margin: 0;
+  }
+
+  .version-header-tag {
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .version-header-status {
+    color: var(--at-text);
+  }
+
+  .version-header-status--draft {
+    color: var(--at-warning);
+  }
+
+  .version-header-history {
+    margin: 0.5rem 0 0;
+    padding-inline-start: 1.25rem;
+  }
+
+  .version-header-history li {
+    margin-block: 0.15rem;
+  }
+
+  .version-header-history-version {
+    font-weight: 600;
+  }
+</style>

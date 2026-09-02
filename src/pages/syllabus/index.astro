@@ -1,0 +1,172 @@
+---
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import VersionHeader from "../../components/VersionHeader.astro";
+import { courseMeta } from "../../course-config";
+import { formatCourseDate } from "../../lib/dates";
+import { sessionLabels, siteConfig } from "../../site-config";
+
+const recurringQuestions = [
+  "When are two files “the same”?",
+  "When does a copy become a new work?",
+  "Who gets to decide which version is authoritative?",
+  "What gets lost when software merges, syncs, compresses, converts, or overwrites?",
+  "Why do humans create duplicate files instead of maintaining one canonical source, even when they know better?",
+  "What happens when different people remember different versions as “the real one”?",
+  "Can provenance be designed, or only reconstructed after the fact?",
+];
+
+const weeks = [
+  { week: 1, title: "final_FINAL_revised2", question: "Why do humans version so badly, even when they're smart?" },
+  {
+    week: 2,
+    title: "What Is a File?",
+    question: "Identity, metadata, hashes — what actually makes two files “the same”?",
+  },
+  {
+    week: 3,
+    title: "Copies & Clones",
+    question: "Duplication vs. derivation — when does a copy become a new work?",
+  },
+  {
+    week: 4,
+    title: "Save As",
+    question: "Branching, performed by people who've never used the word “branch.”",
+  },
+  {
+    week: 5,
+    title: "Before Git",
+    question:
+      "Scribal copying, RCS, carbon paper, Track Changes — version control as an old problem, not a new tool.",
+  },
+  {
+    week: 6,
+    title: "The Diff",
+    question: "How machines compare versions; why diffs are legible and merges aren't.",
+  },
+  {
+    week: 7,
+    title: "Merge Conflict",
+    question: "Two true, incompatible histories — what actually gets decided when they collide.",
+  },
+  {
+    week: 8,
+    title: "The Canonical Version",
+    question: "Authority — who gets to say which copy is real, and on what grounds.",
+  },
+  {
+    week: 9,
+    title: "Sync Is a Lie",
+    question: "Dropbox, Drive, iCloud, conflict copies — distributed systems for civilians.",
+  },
+  {
+    week: 10,
+    title: "Conversion Damage",
+    question: "DOCX → PDF → OCR → TXT — at what point did it stop being the same file?",
+  },
+  {
+    week: 11,
+    title: "Provenance & Forensics",
+    question:
+      "Reconstructing a history from fragments, and how archivists formalized that work a century before software did.",
+  },
+  {
+    week: 12,
+    title: "Archive or Delete?",
+    question: "Retention, digital decay, and designing a system that doesn't lie to you.",
+  },
+];
+---
+
+<ContentLayout
+  title="Syllabus"
+  description={`${courseMeta.code} · ${courseMeta.session} ${courseMeta.year} · ${formatCourseDate(courseMeta.startDate)} to ${formatCourseDate(courseMeta.endDate)}`}
+  {...siteConfig}
+>
+  <VersionHeader
+    version="2.0"
+    history={[
+      {
+        version: "1.0",
+        note:
+          "Thirteen weeks. Week 11 was two separate weeks — Forensic Versioning, then " +
+          "Provenance & Archives — before they were merged: the same work looked at from " +
+          "two directions, not two topics.",
+      },
+    ]}
+  />
+
+  <p class="syllabus-subtitle">Versioning, Copies, and Digital Truth</p>
+
+  <blockquote class="syllabus-thesis">
+    <p>
+      Digital work is rarely one file. It is a family of near-duplicates competing to become the
+      truth.
+    </p>
+  </blockquote>
+
+  <p>
+    The course is not about filenames. It is about how humans and systems decide which version
+    counts, and what is lost in the deciding. The same seven questions keep coming back, in
+    different clothes, for twelve weeks:
+  </p>
+
+  <ul>
+    {recurringQuestions.map((question) => <li>{question}</li>)}
+  </ul>
+
+  <h2>Schedule</h2>
+  <p>
+    Each week is a lecture and a {sessionLabels.singular.toLowerCase()}, not one page split in two
+    — the lecture states the week's question, the {sessionLabels.singular.toLowerCase()} makes it
+    concrete. Rows link once their pages are published; until then, this is the plan, not the
+    index.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Week</th>
+        <th scope="col">Title</th>
+        <th scope="col">Core question</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        weeks.map((entry) => (
+          <tr>
+            <td>{entry.week}</td>
+            <td>{entry.title}</td>
+            <td>{entry.question}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  <h2>Assessment</h2>
+  <p>
+    Four pieces of graded work turn each stretch of the argument into evidence: a duplicate audit,
+    a reconstructed timeline, a written merge, a format autopsy. Weights, due weeks and full briefs
+    are on the <a href={withBase("/assessments/")}>Assessment</a> page.
+  </p>
+</ContentLayout>
+
+<style>
+  .syllabus-subtitle {
+    margin-block: -1rem 1.5rem;
+    color: var(--at-text-secondary);
+    font-style: italic;
+  }
+
+  .syllabus-thesis {
+    margin-block: 0 1.5rem;
+    padding-inline-start: 1.25rem;
+    border-inline-start: 4px solid var(--at-primary);
+    font-size: var(--at-font-size-h4, 1.15rem);
+  }
+
+  .syllabus-thesis p {
+    margin: 0;
+  }
+</style>
