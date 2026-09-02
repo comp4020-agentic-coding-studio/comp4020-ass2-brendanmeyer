@@ -22,13 +22,21 @@ not a special case, and it is where reconstruction starts.
 
 Reconstruction reads a history out of what the artefacts still carry, on the
 assumption that every operation leaves residue somewhere. Not proof —
-residue. A modification time that precedes a creation time says the file was
-copied, not authored, at that location. An embedded application version
-places an edit within a range of years. A style flattened into positioned
-glyphs says the document passed through a fixed-layout format even if the
-extension no longer admits it. A filename retains the name of a person who
-left the project. None of these are records anyone intended to leave, which
-is exactly what makes them useful: nobody curated them.
+residue:
+
+- **A modification time earlier than the creation time.** The file was
+  copied to this location, not authored here. The copy operation carried the
+  old mtime and stamped a new birth time.
+- **An embedded application version string.** Places an edit inside a range
+  of years, and sometimes identifies which organisation's software licence
+  produced it.
+- **Styles flattened into positioned glyphs.** The document passed through a
+  fixed-layout format, whatever its current extension claims.
+- **A departed colleague's name in a filename.** Establishes who held it,
+  and roughly when, from a field nobody thought of as a record.
+
+None of these are records anyone intended to leave, which is exactly what
+makes them useful: nobody curated them, so nobody shaped them.
 
 Every one of these signals is also defeasible. A timestamp can be set
 deliberately. Metadata can be stripped by a tool that had no opinion about

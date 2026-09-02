@@ -23,11 +23,17 @@ Comments, then layout, then characters, then structure.
 
 ---
 
-## What each step drops
+## What each format can hold
 
-- **DOCX → PDF** — comments, tracked changes, attribution, style hierarchy
-- **PDF → OCR** — layout; characters become guesses with an error rate
-- **OCR → TXT** — the last of the structure
+```text
+              comments  revisions  styles  layout  characters
+DOCX             yes       yes      yes     flow    authored
+PDF               no        no    glyphs    fixed   authored
+PDF + OCR         no        no       no      no     guessed
+TXT               no        no       no      no     guessed
+```
+
+Read down any column. It only ever degrades.
 
 ---
 

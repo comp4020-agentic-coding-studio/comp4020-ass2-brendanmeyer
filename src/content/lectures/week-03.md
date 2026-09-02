@@ -33,17 +33,36 @@ who has never seen the original.
 
 ## Where people actually draw the line
 
-Ask five people when a copy becomes a new work and you'll get five different
-thresholds: one edit, a meaningful edit, independent circulation, a different
-audience, enough divergence that reconciling the two would take real effort.
-None of these is wrong. None of them is a property of the file. They're all
-judgements about intent and use, applied after the fact to something that, at
-the byte level, just accumulated changes the way any file does.
+Ask five people when a copy becomes a new work and you get five thresholds,
+each defensible:
 
-This matters because the judgement has consequences that a hash can't settle:
-who owns the result, which version a reader should trust, whether the two
-files should ever be reconciled into one again, or left alone as separate
-things that happen to share an ancestor.
+- **Any edit.** The moment the bytes differ, they are two things. Clean,
+  checkable, and it classifies a corrected typo as a new work.
+- **A meaningful edit.** Substance, not spelling. Requires someone to rule on
+  what counts as substance, which is the original problem restated.
+- **Independent circulation.** It became its own work when someone sent it to
+  someone without reference to the original. The file may not have changed
+  at all.
+- **A different audience.** The same text, repurposed — a report becoming a
+  board paper. Identical bytes, different work.
+- **Irreconcilability.** It is a separate work once pulling the two back
+  into one would cost more than maintaining both. This one is measurable,
+  and it is measured in effort rather than in content.
+
+None of the five is wrong. None of them is a property of the file, and two
+of them can be satisfied while the bytes stay identical.
+
+There is a reason no technical test is available here, and it is not that
+nobody has built one. Derivation is a claim about how a file will be used
+from now on — who maintains it, who reads it, what it answers for. The bytes
+record what has happened to a file, and no property of what has happened can
+encode what is about to. A hash can tell you two files diverged. It cannot
+tell you that one of them has acquired a separate job.
+
+This matters because the judgement has consequences a hash can't settle: who
+owns the result, which version a reader should trust, whether the two files
+should ever be reconciled into one again, or left alone as separate things
+that happen to share an ancestor.
 
 ## Where this goes
 

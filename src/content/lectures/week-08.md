@@ -35,14 +35,29 @@ something.
 
 ## Why they conflict
 
-These four grounds don't agree by default, and the disagreements are where
-this gets consequential. The most recent edit isn't automatically
-authoritative if the editor lacked standing to make it. The copy in
-possession of one department can lose to a court's reading of a different
-copy. A team can build consensus around a draft that the person with formal
-position never approved. None of this is settled by comparing bytes —
-by week 2's tests, all four copies could hash identically or differently and
-it would tell you nothing about which one anyone should trust.
+The grounds are not ranked, and in an ordinary dispute they point at
+different copies:
+
+```text
+copy                            ground        the claim
+──────────────────────────────  ────────────  ───────────────────────────
+signed PDF in contract system   possession    this is the executed one
+the DOCX legal is editing       position      legal owns the wording
+the version emailed at 4pm      recency       nothing is newer
+the build the delivery team     consensus     everyone works from this
+```
+
+All four are the same agreement, and each holder can state a real ground. The
+disagreements are consequential in exactly the way the grounds are
+independent: the most recent edit isn't authoritative if the editor lacked
+standing to make it, the copy in one department's possession can lose to a
+court's reading of a different copy, and a team can build consensus around a
+draft the person with formal position never approved.
+
+None of this is settled by comparing bytes. Run week 2's tests across those
+four copies and you learn which of them differ, which is not the question.
+Identity is a fact about files. Authority is a fact about people, and it has
+to be argued for.
 
 ## Where this goes
 

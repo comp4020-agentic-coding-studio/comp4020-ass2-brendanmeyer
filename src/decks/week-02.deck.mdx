@@ -43,6 +43,33 @@ The filesystem's own test. Invisible to almost every other tool.
 
 ---
 
+## They disagree
+
+```text
+                        name    metadata    content    reference
+renamed in place        fail      pass       pass        pass
+copied to another dir   pass      fail       pass        fail
+hard-linked             fail      pass       pass        pass
+edited, then reverted   pass      fail       pass        pass
+```
+
+Renaming and hard-linking are indistinguishable here. They are not the same
+event.
+
+---
+
+## Every tool picks one, silently
+
+A file browser dedupes by size and date.
+
+A sync client tracks a reference.
+
+A backup tool hashes content.
+
+Their disagreements are four questions answered correctly.
+
+---
+
 {/* _class: quote */}
 
 > Pick the wrong test for the situation and you either merge two things that

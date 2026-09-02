@@ -48,6 +48,14 @@ redlining conventions. The problem — competing near-duplicates, disputed
 authority, lost provenance — is exactly the one from week 1's filename and
 week 4's Save As chain. Only the cost of solving it properly dropped.
 
+Note what did not change. Every one of these mechanisms records that a change
+happened and who made it. Not one of them decides whether the change was an
+improvement, which of two variant readings the author intended, or which
+surviving copy a reader should treat as the text. Textual critics still argue
+about that after the comparison is complete, and so does everyone else. The
+bookkeeping was automated. The adjudication was not, and week 8 is about who
+does it instead.
+
 ## Where this goes
 
 Everything since week 1 — the naming schemes, the copy-or-derivative

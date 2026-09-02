@@ -36,7 +36,17 @@ Nothing in the filesystem marks the transition.
 - a different audience
 - enough divergence that reconciling would take real effort
 
-None of these is a property of the file.
+None of these is a property of the file. Two can be satisfied while the
+bytes stay identical.
+
+---
+
+## Why there's no test for it
+
+Derivation is a claim about how a file will be used from now on.
+
+The bytes record what has happened. No property of what has happened can
+encode what is about to.
 
 ---
 

@@ -18,26 +18,50 @@ problem perfectly well and has no tool at hand that solves it.
 
 ## The filename is standing in for something else
 
-A filename is one string. Whoever named this document was trying to encode,
-in that one string, several things at once: that it supersedes an earlier
-file called `final.docx`, that a second round of changes happened after that,
-and that — as of this moment — this is the one to use. None of that is
-metadata the filesystem tracks. So it goes in the name, because the name is
-the only field everyone involved can see, edit, and agree to trust.
+Here is the folder it lives in:
 
-This is not a failure of discipline. It's a workaround, built by hand, for a
-missing feature: a reliable, shared, visible answer to "which one is current."
-Given a folder, an email thread, and no shared tool for tracking revisions,
-this is roughly the best available solution. It's also a bad one — `final`
-is a claim, not a guarantee, and nothing stops a second `final_FINAL.docx`
-from appearing next week.
+```text
+report.docx
+report_v2.docx
+final.docx
+final_FINAL.docx
+final_FINAL_revised2.docx
+```
+
+A filename is one string, and by the last entry that string is carrying four
+separate assertions at once:
+
+- **Supersession** — this replaces `final.docx`, which replaced something
+  before it.
+- **Sequence** — `revised2` says a second round happened, and implies a first
+  one you are expected to already know about.
+- **Currency** — as of now, this is the one to use.
+- **Finality** — `final`, twice, asserting that no further version is coming.
+
+None of the four is metadata the filesystem tracks. There is no *supersedes*
+field, no *current* flag, no *round* counter. So all four go into the name,
+because the name is the only field in the entire arrangement that everyone
+involved can see, write to, and agree to read.
+
+That is the whole mechanism, and it explains the shape of the result. The
+name has no schema, so a claim cannot be corrected — only appended to, which
+is why these strings grow rightward and never shrink. It has no authority
+behind it, so `final` is a claim and not a guarantee. And it is not
+exclusive, so anyone can file a competing claim in the same field.
+`final_FINAL.docx` is that happening once. `final_FINAL_revised2.docx` is it
+happening twice.
+
+This is not a failure of discipline. Given a folder, an email thread, and no
+shared tool for tracking revisions, it is roughly the best available
+solution. It is also a bad one, and the badness is structural rather than
+personal.
 
 ## Versioning is older than version control
 
 Treat "versioning" and "version control" as different things. Versioning —
 keeping track of which state of a work is current, and what changed to get
 there — is a practice as old as revision itself: monks correcting a
-manuscript, an editor marking up a manuscript in red pen, a filing cabinet
+manuscript, an editor marking up a typescript in red pen, a filing cabinet
 with folders labelled "drafts" and "final." Version *control* — software that
 does this automatically, with a shared and enforced record — is barely sixty
 years old, and most people writing documents today have never opened it.

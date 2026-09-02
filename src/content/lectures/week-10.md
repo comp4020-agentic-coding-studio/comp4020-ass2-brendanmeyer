@@ -19,11 +19,24 @@ and missing things nobody recorded the absence of.
 ## Conversion is re-encoding into a format that can't hold everything
 
 A DOCX carries a comment thread, tracked changes with attribution, a style
-hierarchy, and text as characters. Print it to PDF and you get a fixed
-layout: the comments are gone, the revision history is gone, the styles have
-been flattened into positioned glyphs. Run OCR over that PDF and the glyphs
-become characters again — but guessed characters, with an error rate, and
-now with no layout. Export to TXT and the last of the structure goes.
+hierarchy, and text as characters. Follow it through four steps and watch
+what each format is capable of holding:
+
+```text
+                  comments  revisions  styles  layout  characters
+DOCX                 yes       yes      yes     flow     authored
+PDF                   no        no    glyphs    fixed    authored
+PDF + OCR             no        no       no      no      guessed
+TXT                   no        no       no      no      guessed
+```
+
+Print to PDF and the comments are gone, the revision history is gone, the
+styles have been flattened into positioned glyphs. Run OCR over that PDF and
+the glyphs become characters again — but guessed characters, with an error
+rate, and now with no layout. Export to TXT and the last of the structure
+goes. Read down any column and it only ever degrades. No step in the chain
+restores something an earlier step gave up, and no step is required to
+mention that it gave it up.
 
 At no point does anything report a failure. Each step produced a valid file
 in a valid format. The question the format autopsy asks — at what point did
