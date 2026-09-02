@@ -1,0 +1,68 @@
+---
+title: Sync Is a Lie
+description: Week 9 — what a sync service is actually claiming when it says "in sync"
+---
+
+{/* _class: impact */}
+
+# Sync Is a Lie
+
+"In sync" is a status message, not a state.
+
+---
+
+## What it actually means
+
+As of the last successful exchange, no device reported anything the service
+couldn't reconcile.
+
+Not: the devices currently hold the same bytes.
+
+---
+
+## The hard constraint
+
+A sync service cannot ask you.
+
+It decides immediately, using a timestamp, on clocks that don't agree.
+
+---
+
+## Last week's four grounds
+
+- Possession — meaningless, every device has a copy
+- Position — unknowable, the service doesn't know who your supervisor is
+- Consensus — can't be polled
+- Recency — the only one left
+
+---
+
+## So it uses recency
+
+Which is why it is wrong on a predictable schedule.
+
+---
+
+```text
+budget.xlsx
+budget (Marisol's conflicted copy 2027-04-14).xlsx
+```
+
+Not a malfunction. The service declining a decision it has no authority to
+make.
+
+---
+
+## The failure is downstream
+
+Nobody reads the conflict copy.
+
+It looks like litter rather than a finding.
+
+---
+
+## Next week
+
+A conflict copy preserves both versions intact.
+
+Next: loss with nothing duplicated and nothing overwritten.
