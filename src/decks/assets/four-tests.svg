@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" role="img" aria-labelledby="ft-title ft-desc">
+  <title id="ft-title">One pair of files, four identity tests, four answers</title>
+  <desc id="ft-desc">A single pair of files is put to four tests. Name says different, metadata says same, content says same, and reference says same. Renaming and hard-linking produce identical results across all four, though they are not the same event.</desc>
+
+  <!-- the pair -->
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="16">
+    <rect x="30" y="140" width="200" height="44" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+    <text x="46" y="168" fill="#d8d4cc">report.docx</text>
+    <rect x="30" y="200" width="200" height="44" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+    <text x="46" y="228" fill="#d8d4cc">report-final.docx</text>
+  </g>
+  <text x="30" y="122" font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">one file, renamed</text>
+
+  <!-- fan out -->
+  <g stroke="#4a453e" stroke-width="1.5" fill="none">
+    <path d="M 230 192 H 280 V 68 H 330" />
+    <path d="M 230 192 H 280 V 150 H 330" />
+    <path d="M 230 192 H 280 V 232 H 330" />
+    <path d="M 230 192 H 280 V 314 H 330" />
+  </g>
+
+  <!-- four tests -->
+  <g font-family="Public Sans, sans-serif" font-size="18">
+    <g transform="translate(334, 46)">
+      <rect x="0" y="0" width="180" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="29" fill="#d8d4cc">name</text>
+      <text x="212" y="29" fill="#b97d1c" font-family="SFMono-Regular, Consolas, monospace">different</text>
+    </g>
+    <g transform="translate(334, 128)">
+      <rect x="0" y="0" width="180" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="29" fill="#d8d4cc">metadata</text>
+      <text x="212" y="29" fill="#8a8378" font-family="SFMono-Regular, Consolas, monospace">same</text>
+    </g>
+    <g transform="translate(334, 210)">
+      <rect x="0" y="0" width="180" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="29" fill="#d8d4cc">content</text>
+      <text x="212" y="29" fill="#8a8378" font-family="SFMono-Regular, Consolas, monospace">same</text>
+    </g>
+    <g transform="translate(334, 292)">
+      <rect x="0" y="0" width="180" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="29" fill="#d8d4cc">reference</text>
+      <text x="212" y="29" fill="#8a8378" font-family="SFMono-Regular, Consolas, monospace">same</text>
+    </g>
+  </g>
+
+  <g font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">
+    <text x="30" y="330">A hard link scores</text>
+    <text x="30" y="352">identically on all four.</text>
+    <text x="30" y="382" fill="#b97d1c">It is not the same event.</text>
+  </g>
+</svg>

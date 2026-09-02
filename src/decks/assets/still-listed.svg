@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380" role="img" aria-labelledby="sl-title sl-desc">
+  <title id="sl-title">Five ways a file decays without being deleted</title>
+  <desc id="sl-desc">A directory listing where every entry still appears normal. Beside each, what has actually happened to it: bit rot, a format whose reader stopped shipping, a cited link that now returns something else, a cloud pointer resolving to nothing, and a file whose encryption key is lost.</desc>
+
+  <text x="40" y="40" font-family="Public Sans, sans-serif" font-size="17" fill="#8a8378">what the directory shows</text>
+  <text x="470" y="40" font-family="Public Sans, sans-serif" font-size="17" fill="#b97d1c">what is actually there</text>
+
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="16" fill="#d8d4cc">
+    <text x="40" y="90">archive-2009.tar</text>
+    <text x="40" y="146">thesis.wpd</text>
+    <text x="40" y="202">sources.md</text>
+    <text x="40" y="258">brief.gdoc</text>
+    <text x="40" y="314">payroll.aes</text>
+  </g>
+
+  <g stroke="#4a453e" stroke-width="1" stroke-dasharray="3 6">
+    <line x1="300" y1="84" x2="450" y2="84" />
+    <line x1="300" y1="140" x2="450" y2="140" />
+    <line x1="300" y1="196" x2="450" y2="196" />
+    <line x1="300" y1="252" x2="450" y2="252" />
+    <line x1="300" y1="308" x2="450" y2="308" />
+  </g>
+
+  <g font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">
+    <text x="470" y="90">bit rot on failing media</text>
+    <text x="470" y="146">the only reader stopped shipping</text>
+    <text x="470" y="202">a cited link now returns something else</text>
+    <text x="470" y="258">a pointer that resolves to nothing</text>
+    <text x="470" y="314">the key is no longer held</text>
+  </g>
+
+  <line x1="40" y1="342" x2="740" y2="342" stroke="#4a453e" stroke-width="1" />
+  <text x="40" y="368" font-family="Public Sans, sans-serif" font-size="16" fill="#b97d1c">None of these is a deletion. Every one still lists, and most still open.</text>
+</svg>
