@@ -1,0 +1,150 @@
+---
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
+import VersionHeader from "../../components/VersionHeader.astro";
+import { siteConfig } from "../../site-config";
+
+// The site's final content page. Ungraded, and deliberately not shaped like
+// an assessment: no rubric, no weight, no due date. Framing, then the
+// prompt, then the four artefacts the student already has.
+
+const artefacts = [
+  {
+    href: "/assessments/duplicate-audit/",
+    title: "The Duplicate Audit",
+    produced: "A genealogy of one family of your own files, and the relationships you could not establish.",
+  },
+  {
+    href: "/assessments/which-one-is-real/",
+    title: "Which One Is Real?",
+    produced: "A reconstructed timeline, and a verdict with a ground stated for it.",
+  },
+  {
+    href: "/assessments/merge-conflict-in-writing/",
+    title: "Merge Conflict, In Writing",
+    produced: "A merged document, and a rationale recording what was cut and why.",
+  },
+  {
+    href: "/assessments/format-autopsy/",
+    title: "Format Autopsy",
+    produced: "A chain of converted artefacts, and a verdict on where the file stopped being itself.",
+  },
+];
+---
+
+<ContentLayout
+  title="The Version History"
+  description="The last entry in the file. Ungraded, and not a fifth assessment — a reading of your own semester's evidence against the claim the course opened with."
+  {...siteConfig}
+>
+  <VersionHeader version="1.0" status="CURRENT" />
+
+  <p>
+    The course opened by claiming there is no such thing as &ldquo;the
+    file.&rdquo; Over twelve weeks you produced four pieces of evidence
+    against that claim, or for it. This page is where you read them back.
+  </p>
+
+  <p>Nothing is submitted here and nothing is marked.</p>
+
+  <blockquote class="closing-prompt">
+    <p>
+      Across your own semester&rsquo;s evidence, what actually decided which
+      version counted &mdash; and was it ever really the file itself?
+    </p>
+  </blockquote>
+
+  <h2>What you have</h2>
+
+  <ul class="closing-artefacts">
+    {
+      artefacts.map((artefact) => (
+        <li>
+          <a href={withBase(artefact.href)}>{artefact.title}</a>
+          <span>{artefact.produced}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p>
+    Read the four together rather than in turn. In each one you reached a
+    point where the files stopped answering and you decided anyway. Find
+    those four moments and put them side by side. They are the only places
+    in the semester where the question was actually settled, and none of
+    them was settled by the bytes.
+  </p>
+
+  <p>
+    Note what you were relying on at each of them. The four grounds from
+    week 8 are one vocabulary for it, and they are not the only one. What
+    matters is whether you can now say which ground you used, rather than
+    reporting that one version was newer and treating that as an answer.
+  </p>
+
+  <h2>Case closed</h2>
+
+  <p>
+    Every system in this course reported something true and insufficient. A
+    filename asserted finality it could not enforce. A hash proved identity
+    and settled nothing. A diff reported the differences and declined the
+    judgement. A sync service picked the later timestamp because it had
+    nothing else. A conversion succeeded and dropped the comments without
+    saying so.
+  </p>
+
+  <p>
+    None of them was broken. They answered the questions they could answer.
+    The remaining question &mdash; which of these is the one that counts
+    &mdash; was never a question about files, which is why twelve weeks of
+    looking at files could only ever bring you to the edge of it.
+  </p>
+
+  <p class="closing-signoff">
+    Write it down somewhere you will find it again. Unlike most of what this
+    course examined, that part is under your control.
+  </p>
+</ContentLayout>
+
+<style>
+  .closing-prompt {
+    margin-block: 1.5rem;
+    padding-inline-start: 1.25rem;
+    border-inline-start: 4px solid var(--at-primary);
+    font-size: var(--at-font-size-h4, 1.15rem);
+  }
+
+  .closing-prompt p {
+    margin: 0;
+  }
+
+  .closing-artefacts {
+    margin-block: 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .closing-artefacts li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-block: 0.6rem;
+    border-block-end: 1px solid var(--at-divider);
+  }
+
+  .closing-artefacts li:last-child {
+    border-block-end: 0;
+  }
+
+  .closing-artefacts span {
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .closing-signoff {
+    margin-block-start: 2rem;
+    padding-block-start: 1rem;
+    border-block-start: 1px solid var(--at-divider);
+    color: var(--at-text-secondary);
+  }
+</style>
