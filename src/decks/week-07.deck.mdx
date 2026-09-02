@@ -1,0 +1,70 @@
+---
+title: Merge Conflict
+description: Week 7 — two true histories, and the decision the tooling conceals
+---
+
+{/* _class: impact */}
+
+# Merge Conflict
+
+Not an error.
+
+A system reporting that it has reached a decision it has no basis to make.
+
+---
+
+## Most of a merge is arithmetic
+
+Common ancestor, two descendants. For each region: did one side change it,
+both, or neither?
+
+One side changed it, the other didn't — apply it. No preference expressed,
+nothing to weigh.
+
+---
+
+## The one hard case
+
+Both sides changed the same region, differently.
+
+Two candidate texts. No ancestor to defer to. No ground to prefer either.
+
+---
+
+```text
+<<<<<<< HEAD
+the committee reviewed the findings
+=======
+the committee noted the findings
+>>>>>>> revision
+```
+
+---
+
+## Not stylistic variants
+
+*Reviewed* and *noted* make different claims about what the committee did.
+
+One of them becomes what the record says happened.
+
+---
+
+## Three properties the tooling conceals
+
+- **Lossy** — the discarded version goes nowhere a reader will find
+- **Unattributed** — the file records who merged, not who was overruled
+- **Unexplained** — no format has a field for why
+
+---
+
+{/* _class: quote */}
+
+> A resolved merge looks exactly like text that was never contested.
+
+---
+
+## Next week
+
+Someone decided. The file reads as though there was never a question.
+
+What entitled them?

@@ -1,0 +1,70 @@
+---
+title: The Diff
+description: Week 6 — what a line diff computes, and what it structurally cannot decide
+---
+
+{/* _class: impact */}
+
+# The Diff
+
+A machine cannot see that you rewrote a paragraph.
+
+It sees lines present in one file and absent in the other.
+
+---
+
+## What it computes
+
+The longest sequence of lines the two versions share, in order.
+
+Left over on the left: deletions. Left over on the right: additions.
+
+---
+
+## There is no third category
+
+A modified line is a deletion and an addition sitting next to each other.
+
+The tool has no concept of modification.
+
+---
+
+## Consequences
+
+- Moved text reads as deleted and re-added
+- Reflowing a paragraph changes every line in it
+- A typo fix and a full rewrite look identical
+- More than one diff of the same two files can be correct
+
+---
+
+## Legible because mechanical
+
+It reports what it observed, with no interpretation.
+
+That is what makes it trustworthy.
+
+---
+
+## And empty as a judgement
+
+It can't say which side is right — neither is wrong in any sense available
+to it.
+
+It can't say which change matters — significance isn't a property of a line.
+
+It can't say why — intent was never in the file.
+
+---
+
+{/* _class: quote */}
+
+> Complete as a report. Empty as a judgement.
+
+---
+
+## Next week
+
+The diff shows exactly what differs and nothing about what to keep.
+
+Next: a system that tries to resolve it anyway, and has to stop.
