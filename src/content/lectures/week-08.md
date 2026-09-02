@@ -8,6 +8,12 @@ date: 2027-04-12
 teachers:
   - idris-fenn
 slides: /decks/week-08/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Listed the four grounds and stated that they conflict, without a case
+      in which they actually point at four different copies.
 related:
   - sessions/08-name-the-ground
 ---

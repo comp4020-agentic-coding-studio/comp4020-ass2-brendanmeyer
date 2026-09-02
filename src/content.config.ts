@@ -8,6 +8,51 @@ const courseNodeLoader = (dir: string) =>
   glob({ pattern: ["**/*.{md,mdx}", "!**/CLAUDE.md"], base: `src/content/${dir}` });
 const teacherRefs = z.array(reference("people")).min(1);
 
+// Version stamp for the VersionHeader component. A course arguing that history
+// belongs where the work happens cannot keep its own page versions in a lookup
+// table off to one side, so they are declared per entry. Entries written once
+// need nothing: the default is the true answer for them.
+const versionNumber = z.string().regex(/^\d+\.\d+$/);
+const versionOrder = (version: string) => {
+  const [major, minor] = version.split(".").map(Number);
+  return major * 1000 + minor;
+};
+
+const versionFields = {
+  version: versionNumber.default("1.0"),
+  revisions: z
+    .array(z.object({ version: versionNumber, note: z.string().trim().min(1) }))
+    .nonempty()
+    .optional(),
+};
+
+// A version header that can drift is worse than none — it asserts a currency
+// nobody checked. These two rules make the stamp self-policing.
+const checkVersions = (
+  node: { version: string; revisions?: { version: string; note: string }[] },
+  ctx: z.RefinementCtx,
+) => {
+  if (!node.revisions) return;
+  const current = versionOrder(node.version);
+  node.revisions.forEach((revision, index) => {
+    if (versionOrder(revision.version) >= current) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["revisions", index, "version"],
+        message: `superseded v${revision.version} is not below the current v${node.version}`,
+      });
+    }
+    const next = node.revisions?.[index + 1];
+    if (next && versionOrder(next.version) >= versionOrder(revision.version)) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["revisions", index + 1, "version"],
+        message: "list revisions newest first",
+      });
+    }
+  });
+};
+
 const weightedMarking = z
   .object({
     mode: z.literal("weighted"),
@@ -39,8 +84,10 @@ export const collections = {
         week: weekSchema,
         date: z.coerce.date(),
         teachers: teacherRefs.optional(),
+        ...versionFields,
       })
-      .loose(),
+      .loose()
+      .superRefine(checkVersions),
   }),
 
   assessments: defineCollection({
@@ -51,8 +98,10 @@ export const collections = {
         due: z.coerce.date(),
         weight: z.coerce.number().positive().max(100),
         marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]).optional(),
+        ...versionFields,
       })
-      .loose(),
+      .loose()
+      .superRefine(checkVersions),
   }),
 
   lectures: defineCollection({
@@ -66,8 +115,10 @@ export const collections = {
           .string()
           .regex(/^\/decks\/[a-z0-9-]+\/$/)
           .optional(),
+        ...versionFields,
       })
-      .loose(),
+      .loose()
+      .superRefine(checkVersions),
   }),
 
   people: defineCollection({

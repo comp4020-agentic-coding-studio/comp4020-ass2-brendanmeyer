@@ -2,8 +2,12 @@
 // A document-style version stamp, reused on every content page (syllabus,
 // weekly lecture/lab pages, assessment pages). Most pages are their own
 // first and only version — "Version 1.0 · Status: CURRENT" is simply true
-// for them. `history` is for the rare page that has actually been revised
-// (currently just the syllabus); don't invent a history a page doesn't have.
+// for them. `history` is for a page that has actually been revised; don't
+// invent a history a page doesn't have.
+//
+// Collection pages pass `version`/`revisions` straight from frontmatter, so
+// the stamp is recorded next to the work rather than asserted by a template.
+// The syllabus is a standalone page and passes its own values inline.
 export interface VersionHistoryEntry {
   version: string;
   note: string;

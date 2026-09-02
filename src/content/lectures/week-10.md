@@ -8,6 +8,12 @@ date: 2027-04-26
 teachers:
   - idris-fenn
 slides: /decks/week-10/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Described the conversion chain in prose without setting out what each
+      format in it is capable of holding.
 related:
   - sessions/10-one-step-of-the-chain
 ---

@@ -23,7 +23,11 @@ const { Content } = await render(session);
   description={session.data.description}
   {...siteConfig}
 >
-  <VersionHeader version="1.0" status={session.data.draft ? "DRAFT" : "CURRENT"} />
+  <VersionHeader
+    version={session.data.version}
+    status={session.data.draft ? "DRAFT" : "CURRENT"}
+    history={session.data.revisions}
+  />
   <p><strong>{formatCourseDate(session.data.date)}</strong></p>
   <Content />
   <SpecList spec={session.data.spec}>

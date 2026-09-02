@@ -27,7 +27,11 @@ const { Content } = await render(assessment);
   description={assessment.data.description}
   {...siteConfig}
 >
-  <VersionHeader version="1.0" status={assessment.data.draft ? "DRAFT" : "CURRENT"} />
+  <VersionHeader
+    version={assessment.data.version}
+    status={assessment.data.draft ? "DRAFT" : "CURRENT"}
+    history={assessment.data.revisions}
+  />
   {
     assessment.data.draft && (
       <Callout type="warning">

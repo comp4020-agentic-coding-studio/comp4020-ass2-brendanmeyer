@@ -8,6 +8,12 @@ date: 2027-03-08
 teachers:
   - marisol-quaye
 slides: /decks/week-03/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Compressed the five thresholds into a single sentence, and asserted
+      that no technical test exists without saying why one cannot.
 related:
   - sessions/03-when-did-it-diverge
 ---

@@ -8,6 +8,13 @@ date: 2027-02-22
 teachers:
   - marisol-quaye
 slides: /decks/week-01/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Asserted that the filename was standing in for a missing field without
+      showing the folder, listing the claims the name carries, or accounting
+      for why the strings only ever grow.
 related:
   - sessions/01-naming-as-versioning
 ---

@@ -9,6 +9,13 @@ date: 2027-03-01
 teachers:
   - idris-fenn
 slides: /decks/week-02/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Claimed the four tests disagree without exhibiting a case where they
+      do, and ran into the next week's question with no section break — the
+      only lecture that ended without one.
 related:
   - sessions/02-file-identity
 ---

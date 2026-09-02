@@ -8,6 +8,12 @@ date: 2027-05-03
 teachers:
   - marisol-quaye
 slides: /decks/week-11/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Ran the residue signals together in a paragraph, so the evidence a
+      reconstruction rests on could not be read one item at a time.
 related:
   - sessions/11-chain-of-custody
 ---

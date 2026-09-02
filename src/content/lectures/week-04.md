@@ -8,6 +8,13 @@ date: 2027-03-15
 teachers:
   - idris-fenn
 slides: /decks/week-04/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Called the filename chain a commit graph without drawing it, and read
+      the chain as a record of what happened rather than a set of claims
+      about what happened.
 related:
   - sessions/04-reconstruct-the-graph
 ---

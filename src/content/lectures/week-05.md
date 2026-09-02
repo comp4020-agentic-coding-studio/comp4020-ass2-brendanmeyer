@@ -8,6 +8,12 @@ date: 2027-03-22
 teachers:
   - marisol-quaye
 slides: /decks/week-05/
+version: "2.0"
+revisions:
+  - version: "1.0"
+    note:
+      Ended on the cost of solving the problem dropping, without naming what
+      the automation left exactly where it found it.
 related:
   - sessions/05-a-pre-vcs-artifact
 ---
