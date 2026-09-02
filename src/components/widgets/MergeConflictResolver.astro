@@ -1,0 +1,393 @@
+---
+// Widget 3 — Merge Conflict Resolver. Supports week 7, and is the practice
+// instance for the Merge Conflict, In Writing assessment.
+//
+// The interaction is built around the assessment's actual standard: a
+// resolution is not accepted until a reason is written for it. Choosing a
+// side is one click; the reason is the work, and the widget refuses to
+// proceed without it for the same argument the lecture makes — the merged
+// file records what survived and nothing about why.
+//
+// The three conflicts are graded deliberately: one where both sides are
+// compatible and the conflict is an artefact of line comparison, one where
+// the two versions make incompatible claims of fact, and one where both are
+// defensible and something is lost either way.
+
+interface Conflict {
+  id: string;
+  context: string;
+  ours: string;
+  theirs: string;
+  kind: string;
+  afterNote: string;
+}
+
+const conflicts: Conflict[] = [
+  {
+    id: "one",
+    context: "Paragraph 2, opening sentence",
+    ours: "The committee met on 14 March and reviewed the tender submissions.",
+    theirs:
+      "The committee met on 14 March, and reviewed the four tender submissions received before the deadline.",
+    kind: "mechanical",
+    afterNote:
+      "Compatible. One side added detail the other did not contradict — the count, and the qualification about the deadline. Nothing has to be discarded, and a keep-both resolution is legitimate here in a way it is not below. The conflict exists because both edits landed on one line, not because the versions disagree.",
+  },
+  {
+    id: "two",
+    context: "Paragraph 4, finding",
+    ours: "The committee reviewed the findings and accepted them without amendment.",
+    theirs: "The committee noted the findings and deferred a decision to the April meeting.",
+    kind: "substantive",
+    afterNote:
+      "Incompatible, and about a matter of fact. Accepted without amendment and deferred to April cannot both be what happened. Keeping both produces a document that contradicts itself; splitting the difference produces a record of a meeting that did not occur. This one cannot be resolved from the text at all — it needs the minutes, and the correct resolution may be to mark it unresolved and say what evidence would settle it.",
+  },
+  {
+    id: "three",
+    context: "Paragraph 7, recommendation",
+    ours:
+      "We recommend the proposal proceed, subject to the funding conditions set out in Annex B.",
+    theirs: "We recommend the proposal proceed.",
+    kind: "defensible either way",
+    afterNote:
+      "Both versions are defensible and the choice has consequences. The longer one is precise and binds the recommendation to conditions a reader must go and find. The shorter one is a clean recommendation that quietly drops the conditions. Whichever you kept, a reader lost something — either the conditions, or the ability to read the recommendation on its own. This is the kind of decision the assessment's rationale exists to record.",
+  },
+];
+---
+
+<section class="mcr" aria-labelledby="mcr-heading">
+  <h3 id="mcr-heading">Resolve three conflicts</h3>
+  <p class="mcr-intro">
+    Two people edited the same committee report independently. Most of their
+    edits combined without incident. These three did not. For each one, choose
+    what the merged document should say and write the reason. The reason is
+    required — the widget will not record a resolution without one, on the
+    grounds the lecture gives: the merged file preserves what survived and
+    nothing about why.
+  </p>
+
+  {
+    conflicts.map((conflict, index) => (
+      <article class="mcr-conflict" data-conflict={conflict.id}>
+        <h4>
+          Conflict {index + 1} <span class="mcr-context">· {conflict.context}</span>
+        </h4>
+
+        <pre class="mcr-hunk"><code>{`<<<<<<< version A
+${conflict.ours}
+=======
+${conflict.theirs}
+>>>>>>> version B`}</code></pre>
+
+        <fieldset class="mcr-choices">
+          <legend>Resolution</legend>
+          <label>
+            <input type="radio" name={`mcr-${conflict.id}`} value="a" data-text={conflict.ours} />
+            Keep version A
+          </label>
+          <label>
+            <input type="radio" name={`mcr-${conflict.id}`} value="b" data-text={conflict.theirs} />
+            Keep version B
+          </label>
+          <label>
+            <input type="radio" name={`mcr-${conflict.id}`} value="own" />
+            Write a replacement
+          </label>
+          <label>
+            <input type="radio" name={`mcr-${conflict.id}`} value="unresolved" />
+            Leave unresolved, and say what would settle it
+          </label>
+        </fieldset>
+
+        <p class="mcr-field" data-own-field hidden>
+          <label for={`mcr-own-${conflict.id}`}>Replacement text</label>
+          <textarea id={`mcr-own-${conflict.id}`} rows="2" data-own-text></textarea>
+        </p>
+
+        <p class="mcr-field">
+          <label for={`mcr-reason-${conflict.id}`}>
+            Reason — what you kept, what you cut, and on what ground
+          </label>
+          <textarea id={`mcr-reason-${conflict.id}`} rows="3" data-reason></textarea>
+        </p>
+
+        <p class="mcr-status" data-status role="status"></p>
+
+        <button type="button" data-record>Record this resolution</button>
+
+        <p class="mcr-after" data-after hidden>
+          <span class="mcr-kind">{conflict.kind}</span>
+          {conflict.afterNote}
+        </p>
+      </article>
+    ))
+  }
+
+  <div class="mcr-output">
+    <h4>Your merge and rationale</h4>
+    <p class="mcr-intro">
+      Filled in as you record each resolution. This is the shape the
+      assessment asks for: the document, and the reasoning that produced it,
+      as two separate things.
+    </p>
+    <pre class="mcr-transcript" data-transcript>Nothing recorded yet.</pre>
+    <button type="button" data-copy>Copy to clipboard</button>
+    <span class="mcr-copied" data-copied role="status"></span>
+  </div>
+</section>
+
+<script>
+  interface Recorded {
+    context: string;
+    text: string;
+    reason: string;
+  }
+
+  function initMergeResolvers() {
+    for (const widget of document.querySelectorAll<HTMLElement>(".mcr")) {
+      if (widget.dataset.mcrReady === "true") continue;
+      widget.dataset.mcrReady = "true";
+
+      const transcript = widget.querySelector<HTMLElement>("[data-transcript]");
+      const recorded = new Map<string, Recorded>();
+
+      const render = () => {
+        if (!transcript) return;
+        if (recorded.size === 0) {
+          transcript.textContent = "Nothing recorded yet.";
+          return;
+        }
+        const lines: string[] = ["MERGED TEXT", ""];
+        for (const entry of recorded.values()) {
+          lines.push(`[${entry.context}]`, entry.text, "");
+        }
+        lines.push("", "RATIONALE", "");
+        for (const entry of recorded.values()) {
+          lines.push(`[${entry.context}]`, entry.reason, "");
+        }
+        transcript.textContent = lines.join("\n").trimEnd();
+      };
+
+      for (const conflict of widget.querySelectorAll<HTMLElement>(".mcr-conflict")) {
+        const radios = conflict.querySelectorAll<HTMLInputElement>("input[type='radio']");
+        const ownField = conflict.querySelector<HTMLElement>("[data-own-field]");
+        const ownText = conflict.querySelector<HTMLTextAreaElement>("[data-own-text]");
+        const reason = conflict.querySelector<HTMLTextAreaElement>("[data-reason]");
+        const status = conflict.querySelector<HTMLElement>("[data-status]");
+        const after = conflict.querySelector<HTMLElement>("[data-after]");
+        const record = conflict.querySelector<HTMLButtonElement>("[data-record]");
+        const heading = conflict.querySelector("h4")?.textContent?.trim() ?? "Conflict";
+
+        for (const radio of radios) {
+          radio.addEventListener("change", () => {
+            if (ownField) ownField.hidden = radio.value !== "own";
+          });
+        }
+
+        record?.addEventListener("click", () => {
+          const chosen = conflict.querySelector<HTMLInputElement>("input[type='radio']:checked");
+          const reasonText = reason?.value.trim() ?? "";
+
+          if (!chosen) {
+            if (status) status.textContent = "Choose a resolution first.";
+            return;
+          }
+          if (reasonText.length < 15) {
+            if (status) {
+              status.textContent =
+                "A reason is required before this resolution is recorded. Say what you kept, what you cut, and on what ground.";
+            }
+            reason?.focus();
+            return;
+          }
+
+          let text: string;
+          if (chosen.value === "own") {
+            text = ownText?.value.trim() ?? "";
+            if (!text) {
+              if (status) status.textContent = "Write the replacement text.";
+              ownText?.focus();
+              return;
+            }
+          } else if (chosen.value === "unresolved") {
+            text = "[unresolved — see rationale]";
+          } else {
+            text = chosen.dataset.text ?? "";
+          }
+
+          recorded.set(conflict.dataset.conflict ?? heading, {
+            context: heading,
+            text,
+            reason: reasonText,
+          });
+          if (status) status.textContent = "Recorded.";
+          if (after) after.hidden = false;
+          render();
+        });
+      }
+
+      const copy = widget.querySelector<HTMLButtonElement>("[data-copy]");
+      const copied = widget.querySelector<HTMLElement>("[data-copied]");
+      copy?.addEventListener("click", async () => {
+        if (!transcript || !copied) return;
+        try {
+          await navigator.clipboard.writeText(transcript.textContent ?? "");
+          copied.textContent = "Copied.";
+        } catch {
+          copied.textContent = "Copy failed — select the text above instead.";
+        }
+      });
+    }
+  }
+
+  initMergeResolvers();
+  document.addEventListener("astro:page-load", initMergeResolvers);
+</script>
+
+<style>
+  .mcr {
+    margin-block: 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .mcr h3 {
+    margin-block: 0 0.75rem;
+  }
+
+  .mcr h4 {
+    margin-block: 0 0.5rem;
+  }
+
+  .mcr-intro {
+    margin-block: 0 1rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .mcr-context {
+    color: var(--at-text-secondary);
+    font-weight: 400;
+  }
+
+  .mcr-conflict {
+    margin-block: 1.5rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid var(--at-divider);
+  }
+
+  .mcr-hunk {
+    margin-block: 0 1rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--at-divider);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    font-size: var(--at-font-size-sm);
+    overflow-x: auto;
+  }
+
+  .mcr-choices {
+    margin: 0 0 1rem;
+    padding: 0;
+    border: 0;
+  }
+
+  .mcr-choices legend,
+  .mcr-field label {
+    padding: 0;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .mcr-choices label {
+    display: block;
+    margin-block: 0.35rem;
+    font-size: var(--at-font-size-sm);
+  }
+
+  .mcr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-block: 0 1rem;
+  }
+
+  .mcr textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    color: var(--at-text);
+    font-family: inherit;
+    font-size: var(--at-font-size-sm);
+  }
+
+  .mcr button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--at-primary);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    color: var(--at-text);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-sm);
+    cursor: pointer;
+  }
+
+  .mcr button:hover {
+    background: var(--at-primary-tint, var(--at-bg-elevated));
+  }
+
+  .mcr-status,
+  .mcr-copied {
+    margin-block: 0 0.5rem;
+    color: var(--at-warning);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .mcr-copied {
+    margin-inline-start: 0.75rem;
+  }
+
+  .mcr-after {
+    margin-block: 1rem 0;
+    padding: 0.75rem 0.9rem;
+    border-inline-start: 3px solid var(--at-primary);
+    background: var(--at-bg);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .mcr-kind {
+    display: inline-block;
+    margin-inline-end: 0.5rem;
+    padding: 0.05rem 0.45rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .mcr-output {
+    margin-block-start: 1.5rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid var(--at-divider);
+  }
+
+  .mcr-transcript {
+    margin-block: 0 0.75rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--at-divider);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    font-size: var(--at-font-size-sm);
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+</style>

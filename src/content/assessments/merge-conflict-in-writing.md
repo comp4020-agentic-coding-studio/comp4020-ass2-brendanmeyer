@@ -62,6 +62,7 @@ readable on its own — for each conflict, quote or locate the passage, give
 both versions, state the decision and the ground. Length follows the number
 of real conflicts, not a word count.
 
-The week 7 lab requires a stated reason for each resolution before it will
-accept one. The reasons it collects are the same reasons this assessment asks
-you to write down.
+The [week 7 lab](/sessions/07-resolving-by-hand/) requires a stated reason
+for each resolution before it will accept one, and produces the merge and the
+rationale as two separate things. The reasons it collects are the same reasons
+this assessment asks you to write down, on a smaller document.
