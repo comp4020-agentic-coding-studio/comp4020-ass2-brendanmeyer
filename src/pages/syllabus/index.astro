@@ -16,12 +16,20 @@ const recurringQuestions = [
   "Can provenance be designed, or only reconstructed after the fact?",
 ];
 
-const weeks = [
+interface WeekEntry {
+  week: number;
+  title: string;
+  question: string;
+  slug?: string;
+}
+
+const weeks: WeekEntry[] = [
   { week: 1, title: "final_FINAL_revised2", question: "Why do humans version so badly, even when they're smart?" },
   {
     week: 2,
     title: "What Is a File?",
     question: "Identity, metadata, hashes — what actually makes two files “the same”?",
+    slug: "week-02",
   },
   {
     week: 3,
@@ -136,7 +144,9 @@ const weeks = [
         weeks.map((entry) => (
           <tr>
             <td>{entry.week}</td>
-            <td>{entry.title}</td>
+            <td>
+              {entry.slug ? <a href={withBase(`/lectures/${entry.slug}/`)}>{entry.title}</a> : entry.title}
+            </td>
             <td>{entry.question}</td>
           </tr>
         ))

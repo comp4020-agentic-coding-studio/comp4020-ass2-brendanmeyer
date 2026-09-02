@@ -1,0 +1,58 @@
+---
+title: What Is a File?
+description: Week 2 — identity, metadata, hashes, and why "the same file" is four different claims
+---
+
+{/* _class: impact */}
+
+# What Is a File?
+
+Identity is not a property. It's a claim someone checks.
+
+---
+
+## Test 1 — Name
+
+Two files are "the same" if they're called the same thing.
+
+Everyone's default test. Trust it least.
+
+---
+
+## Test 2 — Metadata
+
+Size, modified time, permissions, owner.
+
+Rewritable with one command. Doesn't survive a copy.
+
+---
+
+## Test 3 — Content
+
+A hash of the bytes.
+
+Identical hash, identical content. Full stop. Says nothing else.
+
+---
+
+## Test 4 — Reference
+
+The inode a name resolves to.
+
+The filesystem's own test. Invisible to almost every other tool.
+
+---
+
+{/* _class: quote */}
+
+> Pick the wrong test for the situation and you either merge two things that
+> were never one, or split one thing you can no longer reconcile.
+
+---
+
+## Next week
+
+Two files can pass all four tests and still become different works the
+moment someone starts editing one of them.
+
+Copies vs. clones.
