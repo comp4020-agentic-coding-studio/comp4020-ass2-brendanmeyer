@@ -20,6 +20,10 @@ the same operation as diffing branches to find a common ancestor.
 
 ---
 
+![A stemma: a dashed node marked "lost original" at the top, two inferred intermediate copies below it, and four surviving manuscripts at the bottom.](./assets/stemma.svg)
+
+---
+
 ## Carbon paper
 
 A duplicate made at the moment of writing, not after.
@@ -67,3 +71,26 @@ The bookkeeping was automated. The adjudication was not.
 There's a formal record of changes now.
 
 How does a machine actually compare two versions?
+
+---
+
+{/* _class: sources */}
+
+## Sources
+
+- <cite>The Source Code Control System</cite>
+  <span class="ref-meta">Marc J. Rochkind, *IEEE Transactions on Software Engineering* SE-1(4), 1975, 364–370.
+  SCCS: the first system to record, automatically, who made each change, when, and why.</span>
+  [dl.acm.org](https://dl.acm.org/doi/10.1109/TSE.1975.6312866)
+- <cite>RCS — A System for Version Control</cite>
+  <span class="ref-meta">Walter F. Tichy, *Software: Practice and Experience* 15(7), 1985, 637–654.
+  Stores each revision as a delta against its neighbour — the carbon-paper idea, costed
+  out in disk blocks.</span>
+  [free PDF](https://docs-archive.freebsd.org/44doc/psd/13.rcs/paper.pdf)
+
+```notes
+Rochkind's own list is the useful quote: who, when, where, why. Every one of
+those was previously a thing a person remembered. Note the fifty-year gap
+between the practices at the start of this deck and the software at the end,
+and that nothing in the list is a new idea — only newly automatic.
+```

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380" role="img" aria-labelledby="naf-title naf-desc">
+  <title id="naf-title">The filename is the only writable field</title>
+  <desc id="naf-desc">A file's record of fields. Size, modified time, created time, owner and type are all set by the system and cannot be used to say which version is current. The name is the only field a person can write, so every claim ends up inside it.</desc>
+
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="17">
+    <!-- system fields -->
+    <g>
+      <rect x="40" y="40" width="330" height="42" rx="4" fill="none" stroke="#4a453e" stroke-width="1.5" />
+      <text x="56" y="67" fill="#6b6154">size</text>
+      <text x="354" y="67" fill="#6b6154" text-anchor="end">84 KB</text>
+    </g>
+    <g>
+      <rect x="40" y="94" width="330" height="42" rx="4" fill="none" stroke="#4a453e" stroke-width="1.5" />
+      <text x="56" y="121" fill="#6b6154">modified</text>
+      <text x="354" y="121" fill="#6b6154" text-anchor="end">14 Mar 09:12</text>
+    </g>
+    <g>
+      <rect x="40" y="148" width="330" height="42" rx="4" fill="none" stroke="#4a453e" stroke-width="1.5" />
+      <text x="56" y="175" fill="#6b6154">created</text>
+      <text x="354" y="175" fill="#6b6154" text-anchor="end">02 Mar 16:20</text>
+    </g>
+    <g>
+      <rect x="40" y="202" width="330" height="42" rx="4" fill="none" stroke="#4a453e" stroke-width="1.5" />
+      <text x="56" y="229" fill="#6b6154">owner</text>
+      <text x="354" y="229" fill="#6b6154" text-anchor="end">r.adeyemi</text>
+    </g>
+
+    <!-- the writable one -->
+    <g>
+      <rect x="40" y="266" width="700" height="52" rx="4" fill="#b97d1c" fill-opacity="0.08" stroke="#b97d1c" stroke-width="2" />
+      <text x="56" y="299" fill="#b97d1c">name</text>
+      <text x="724" y="299" fill="#e8e3d8" text-anchor="end">final_FINAL_revised2.docx</text>
+    </g>
+  </g>
+
+  <g font-family="Public Sans, sans-serif" font-size="16">
+    <text x="410" y="66" fill="#6b6154">set by the system</text>
+    <text x="410" y="122" fill="#6b6154">no field for</text>
+    <text x="410" y="144" fill="#6b6154">&#8220;supersedes&#8221;</text>
+    <text x="410" y="200" fill="#6b6154">no field for</text>
+    <text x="410" y="222" fill="#6b6154">&#8220;this is the current one&#8221;</text>
+
+    <text x="40" y="348" fill="#b97d1c">The only field everyone can see, write to, and agree to read.</text>
+    <text x="40" y="372" fill="#8a8378">So all four claims go in here. It has no schema, so they only accumulate.</text>
+  </g>
+</svg>

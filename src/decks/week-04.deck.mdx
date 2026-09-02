@@ -38,16 +38,7 @@ Three of the four substitutes are memory. Memory is not shared storage.
 
 ## The graph is legible
 
-```text
-essay_draft.docx
-        │
-essay_draft_v2.docx
-        ├────────► essay_draft_v2_JOHN_EDITS.docx
-        │                       │
-        └──── merge ────────────┘
-                  │
-    ..._JOHN_EDITS_MARISOL_MERGED.docx
-```
+![A Save As chain drawn as a branch-and-merge graph: essay_draft.docx to essay_draft_v2.docx, branching to John's edits, the two lines rejoining at a merged file.](./assets/save-as-graph.svg)
 
 You can reconstruct this from the folder listing alone.
 
@@ -75,3 +66,24 @@ None of this is new. People managed divergent copies for centuries before
 any of it ran on a computer.
 
 What did they actually do?
+
+---
+
+{/* _class: sources */}
+
+## Sources
+
+- <cite>RCS — A System for Version Control</cite>
+  <span class="ref-meta">Walter F. Tichy, *Software: Practice and Experience* 15(7), 1985, 637–654.
+  Organises revisions into an ancestral tree rooted at the initial revision — the same
+  structure the filename chain implies, recorded by the system that performed the
+  operations rather than by the people who did.</span>
+  [wiley](https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.4380150703) ·
+  [free PDF](https://docs-archive.freebsd.org/44doc/psd/13.rcs/paper.pdf)
+
+```notes
+Tichy is here for the phrase "ancestral tree," not for RCS as a tool. The
+contrast to draw: RCS records the tree as a consequence of the operations,
+so it cannot disagree with what happened. The folder records it as a set of
+assertions typed afterwards, so it can.
+```

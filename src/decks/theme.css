@@ -11,3 +11,53 @@
  * slide class you reach for (`_class: quote`), a code-heavy layout, a
  * background. */
 @import url("astro-theme-university/styles/deck.css");
+
+/* `_class: sources` --- the closing slide on every week's deck. Citations are
+ * reference material rather than something read aloud from the back of a room,
+ * so they get a smaller type scale than a content slide and hang their
+ * publication details off the title. Every entry names a real, published work;
+ * the ones without a link are print sources with no stable public copy. */
+.reveal .slides section.sources {
+  font-size: 1.35rem;
+  line-height: 1.45;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    margin-bottom: 1.1rem;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--at-tertiary);
+    text-align: left;
+  }
+
+  cite {
+    display: block;
+    color: var(--at-light-grey);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .ref-meta {
+    color: var(--at-tertiary);
+  }
+
+  a {
+    word-break: break-word;
+  }
+}
+
+/* Diagrams are line art on a transparent ground, so they need room rather than
+ * a frame. Cap the height so a wide diagram cannot push a slide's text off. */
+.reveal .slides section img[src$=".svg"] {
+  max-height: 58vh;
+  margin-inline: auto;
+}

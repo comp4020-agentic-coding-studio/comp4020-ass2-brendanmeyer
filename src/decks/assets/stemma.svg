@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" role="img" aria-labelledby="stemma-title stemma-desc">
+  <title id="stemma-title">A stemma: a lost original reconstructed from surviving copies</title>
+  <desc id="stemma-desc">A tree diagram. At the top, a dashed node marked "lost original" that no longer exists. Below it, two intermediate copies, also inferred, and at the bottom four surviving manuscripts. The relationships are reconstructed from shared errors rather than recorded anywhere.</desc>
+
+  <g stroke="#8a8378" stroke-width="1.5" fill="none">
+    <path d="M 390 78 V 118" />
+    <path d="M 390 118 H 250 V 152" />
+    <path d="M 390 118 H 530 V 152" />
+    <path d="M 250 196 V 232 H 150 V 268" />
+    <path d="M 250 232 H 340 V 268" />
+    <path d="M 530 196 V 232 H 450 V 268" />
+    <path d="M 530 232 H 630 V 268" />
+  </g>
+
+  <!-- lost original -->
+  <g>
+    <rect x="310" y="34" width="160" height="44" rx="4" fill="none" stroke="#b97d1c" stroke-width="2" stroke-dasharray="6 5" />
+    <text x="390" y="62" font-family="Public Sans, sans-serif" font-size="18" fill="#b97d1c" text-anchor="middle">lost original</text>
+  </g>
+
+  <!-- inferred intermediates -->
+  <g font-family="Public Sans, sans-serif" font-size="17" fill="#8a8378" text-anchor="middle">
+    <rect x="186" y="152" width="128" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" stroke-dasharray="6 5" />
+    <text x="250" y="180">inferred</text>
+    <rect x="466" y="152" width="128" height="44" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" stroke-dasharray="6 5" />
+    <text x="530" y="180">inferred</text>
+  </g>
+
+  <!-- surviving witnesses -->
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="18" fill="#e8e3d8" text-anchor="middle">
+    <rect x="94" y="268" width="112" height="46" rx="4" fill="none" stroke="#d8d4cc" stroke-width="1.5" />
+    <text x="150" y="298">A</text>
+    <rect x="284" y="268" width="112" height="46" rx="4" fill="none" stroke="#d8d4cc" stroke-width="1.5" />
+    <text x="340" y="298">B</text>
+    <rect x="394" y="268" width="112" height="46" rx="4" fill="none" stroke="#d8d4cc" stroke-width="1.5" />
+    <text x="450" y="298">C</text>
+    <rect x="574" y="268" width="112" height="46" rx="4" fill="none" stroke="#d8d4cc" stroke-width="1.5" />
+    <text x="630" y="298">D</text>
+  </g>
+
+  <text x="720" y="298" font-family="Public Sans, sans-serif" font-size="15" fill="#8a8378" text-anchor="end"></text>
+
+  <g font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">
+    <text x="94" y="346">Only the bottom row still exists. Everything above it is reconstructed</text>
+    <text x="94" y="372">from shared errors &#8212; residue, not record.</text>
+  </g>
+</svg>

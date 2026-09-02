@@ -77,9 +77,42 @@ Their disagreements are four questions answered correctly.
 
 ---
 
+## Test 3, in practice
+
+Two PDFs. Different content on the page. Same SHA-1:
+
+```text
+38762cf7f55934b34d179ae6a4c80cadccbb7f0a
+```
+
+Published 2017. Identity by content is the strongest test available, and
+"strongest available" is not the same as "true."
+
+---
+
 ## Next week
 
 Two files can pass all four tests and still become different works the
 moment someone starts editing one of them.
 
 Copies vs. clones.
+
+---
+
+{/* _class: sources */}
+
+## Sources
+
+- <cite>The First Collision for Full SHA-1</cite>
+  <span class="ref-meta">Marc Stevens, Elie Bursztein, Pierre Karpman, Ange Albertini and Yarik Markov,
+  *CRYPTO 2017*, LNCS 10401, 570–596. Two PDFs displaying different content, sharing one
+  SHA-1 digest, at a cost of roughly 2⁶³ compression-function calls.</span>
+  [eprint.iacr.org](https://eprint.iacr.org/2017/190)
+
+```notes
+The collision matters here for a narrower reason than the cryptographic one:
+it is a case where the content test returns "same" for two files nobody would
+call the same. Do not overstate it — SHA-256 is not affected, and this took
+6,500 CPU years. The point is that every one of the four tests answers its own
+question, including the strongest.
+```

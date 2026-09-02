@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" role="img" aria-labelledby="sync-title sync-desc">
+  <title id="sync-title">Two devices edit the same file while offline</title>
+  <desc id="sync-desc">Two timelines, laptop and phone, both in sync until connectivity drops. Each is edited independently while offline. When both reconnect the service has two versions and no ground for preferring either, so it writes a conflict copy.</desc>
+
+  <defs>
+    <marker id="sy-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8378" />
+    </marker>
+  </defs>
+
+  <!-- device labels -->
+  <g font-family="Public Sans, sans-serif" font-size="18" fill="#d8d4cc">
+    <text x="24" y="106">laptop</text>
+    <text x="24" y="256">phone</text>
+  </g>
+
+  <!-- timelines -->
+  <line x1="130" y1="100" x2="620" y2="100" stroke="#8a8378" stroke-width="1.5" marker-end="url(#sy-arrow)" />
+  <line x1="130" y1="250" x2="620" y2="250" stroke="#8a8378" stroke-width="1.5" marker-end="url(#sy-arrow)" />
+
+  <!-- offline band -->
+  <rect x="250" y="60" width="230" height="230" fill="#b97d1c" opacity="0.07" />
+  <line x1="250" y1="60" x2="250" y2="290" stroke="#b97d1c" stroke-width="1.5" stroke-dasharray="6 5" />
+  <line x1="480" y1="60" x2="480" y2="290" stroke="#b97d1c" stroke-width="1.5" stroke-dasharray="6 5" />
+  <text x="365" y="46" font-family="Public Sans, sans-serif" font-size="16" fill="#b97d1c" text-anchor="middle">no connectivity</text>
+
+  <!-- in sync marker -->
+  <circle cx="190" cy="100" r="6" fill="#8a8378" />
+  <circle cx="190" cy="250" r="6" fill="#8a8378" />
+  <text x="190" y="180" font-family="Public Sans, sans-serif" font-size="15" fill="#8a8378" text-anchor="middle">in sync</text>
+
+  <!-- edits while offline -->
+  <circle cx="330" cy="100" r="7" fill="#b97d1c" />
+  <text x="330" y="82" font-family="SFMono-Regular, Consolas, monospace" font-size="15" fill="#d8d4cc" text-anchor="middle">edit 09:14</text>
+
+  <circle cx="410" cy="250" r="7" fill="#b97d1c" />
+  <text x="410" y="284" font-family="SFMono-Regular, Consolas, monospace" font-size="15" fill="#d8d4cc" text-anchor="middle">edit 09:41</text>
+
+  <!-- reconnect -->
+  <path d="M 560 100 H 620 V 168" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <path d="M 560 250 H 620 V 182" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <text x="530" y="176" font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378" text-anchor="end">both reconnect</text>
+
+  <!-- outcome -->
+  <g font-family="SFMono-Regular, Consolas, monospace" font-size="16">
+    <rect x="24" y="322" width="300" height="42" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+    <text x="40" y="349" fill="#d8d4cc">budget.xlsx</text>
+
+    <rect x="344" y="322" width="412" height="42" rx="4" fill="none" stroke="#b97d1c" stroke-width="2" />
+    <text x="360" y="349" fill="#e8e3d8">budget (conflicted copy).xlsx</text>
+  </g>
+
+  <text x="24" y="308" font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">Neither can be discarded without loss, so the service declines to choose:</text>
+</svg>

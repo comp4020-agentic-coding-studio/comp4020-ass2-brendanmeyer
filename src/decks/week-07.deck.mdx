@@ -23,6 +23,10 @@ nothing to weigh.
 
 ---
 
+![A three-way merge: an ancestor splits into versions A and B and rejoins. Regions only one side changed are applied automatically; the region both changed stops and is handed back.](./assets/three-way-merge.svg)
+
+---
+
 ## The one hard case
 
 Both sides changed the same region, differently.
@@ -68,3 +72,28 @@ One of them becomes what the record says happened.
 Someone decided. The file reads as though there was never a question.
 
 What entitled them?
+
+---
+
+{/* _class: sources */}
+
+## Sources
+
+- <cite>A State-of-the-Art Survey on Software Merging</cite>
+  <span class="ref-meta">Tom Mens, *IEEE Transactions on Software Engineering* 28(5), 2002, 449–462.
+  Surveys merging from purely textual through syntactic to semantic techniques. The
+  further up that ladder a tool climbs, the more it can combine — and no rung reaches
+  intent.</span>
+  [dl.acm.org](https://dl.acm.org/doi/10.1109/TSE.2002.1000449)
+- <cite>A Formal Investigation of Diff3</cite>
+  <span class="ref-meta">Sanjeev Khanna, Keshav Kunal and Benjamin C. Pierce, *FSTTCS 2007*, LNCS 4855, 485–496.
+  Takes the de facto standard merge algorithm and checks its intuitive properties. Several
+  turn out to be false in general.</span>
+  [cis.upenn.edu](https://www.cis.upenn.edu/~bcpierce/papers/diff3-short.pdf)
+
+```notes
+The Khanna paper is the honest one to cite here: people assume edits to
+well-separated regions never conflict, and formalising that assumption is
+delicate. Useful against the objection "surely a better tool would just handle
+it" — better tools handle more, and the remaining case is not a tooling gap.
+```

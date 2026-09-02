@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" role="img" aria-labelledby="twm-title twm-desc">
+  <title id="twm-title">A three-way merge, region by region</title>
+  <desc id="twm-desc">A common ancestor splits into two versions, A and B, which rejoin. Three regions are shown: one only A changed, applied automatically; one only B changed, applied automatically; and one both changed differently, which stops and is handed back.</desc>
+
+  <defs>
+    <marker id="twm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8378" />
+    </marker>
+  </defs>
+
+  <!-- ancestor -->
+  <rect x="24" y="164" width="130" height="52" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <text x="89" y="196" font-family="Public Sans, sans-serif" font-size="18" fill="#d8d4cc" text-anchor="middle">ancestor</text>
+
+  <!-- split -->
+  <path d="M 154 190 H 200 V 96 H 246" fill="none" stroke="#8a8378" stroke-width="1.5" marker-end="url(#twm-arrow)" />
+  <path d="M 154 190 H 200 V 284 H 246" fill="none" stroke="#8a8378" stroke-width="1.5" marker-end="url(#twm-arrow)" />
+
+  <rect x="250" y="70" width="90" height="52" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <text x="295" y="102" font-family="Public Sans, sans-serif" font-size="18" fill="#d8d4cc" text-anchor="middle">A</text>
+
+  <rect x="250" y="258" width="90" height="52" rx="4" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <text x="295" y="290" font-family="Public Sans, sans-serif" font-size="18" fill="#d8d4cc" text-anchor="middle">B</text>
+
+  <!-- rejoin -->
+  <path d="M 340 96 H 400 V 190 H 436" fill="none" stroke="#8a8378" stroke-width="1.5" />
+  <path d="M 340 284 H 400 V 190" fill="none" stroke="#8a8378" stroke-width="1.5" />
+
+  <!-- three regions -->
+  <g font-family="Public Sans, sans-serif" font-size="17">
+    <g transform="translate(440, 44)">
+      <rect x="0" y="0" width="316" height="60" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="26" fill="#d8d4cc">region 1 &#8212; only A changed it</text>
+      <text x="18" y="48" fill="#8a8378" font-size="15">applied. B expressed no preference.</text>
+    </g>
+    <g transform="translate(440, 128)">
+      <rect x="0" y="0" width="316" height="60" rx="4" fill="none" stroke="#6b6154" stroke-width="1.5" />
+      <text x="18" y="26" fill="#d8d4cc">region 2 &#8212; only B changed it</text>
+      <text x="18" y="48" fill="#8a8378" font-size="15">applied. Nothing to weigh.</text>
+    </g>
+    <g transform="translate(440, 212)">
+      <rect x="0" y="0" width="316" height="84" rx="4" fill="none" stroke="#b97d1c" stroke-width="2" />
+      <text x="18" y="28" fill="#e8e3d8">region 3 &#8212; both changed it</text>
+      <text x="18" y="52" fill="#b97d1c" font-size="15">no ancestor to defer to.</text>
+      <text x="18" y="72" fill="#b97d1c" font-size="15">stops, and hands the region back.</text>
+    </g>
+  </g>
+
+  <g font-family="Public Sans, sans-serif" font-size="16" fill="#8a8378">
+    <text x="24" y="352">Two of the three are arithmetic. The third is the whole subject:</text>
+    <text x="24" y="378">the system has two candidates and no ground for preferring either.</text>
+  </g>
+</svg>
