@@ -60,5 +60,6 @@ filenames. State inferences as inferences — "the mtime precedes the creation
 time, so this was copied here rather than authored here" is an inference with
 its evidence attached, and that is the form the whole timeline should take.
 
-The week 6 lab carries a smaller version of this task that shows you the
-answer and the reasoning afterwards. This assessment does not.
+The [week 6 lab](/sessions/06-reading-the-difference/) carries a smaller
+version of this task that shows you the answer and the reasoning afterwards.
+This assessment does not.

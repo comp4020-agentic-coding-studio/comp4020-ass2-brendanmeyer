@@ -1,0 +1,316 @@
+---
+// Widget 1 — Which File Is Current? Practice instance for the Which One Is
+// Real? assessment, embedded in the week 6 lab.
+//
+// An inspection, not a quiz: no score is kept, and the reveal explains every
+// candidate rather than marking one response right. The package is
+// constructed so that the most recently modified document is not the
+// authoritative one, and so that the artefact which settles it is one nobody
+// created deliberately.
+
+interface Candidate {
+  id: string;
+  name: string;
+  size: string;
+  modified: string;
+  by: string;
+  note: string;
+  verdict: "authoritative" | "superseded" | "derived" | "not a document";
+}
+
+const candidates: Candidate[] = [
+  {
+    id: "proposal",
+    name: "proposal.docx",
+    size: "84 KB",
+    modified: "14 Mar 2027, 09:12",
+    by: "R. Adeyemi",
+    verdict: "superseded",
+    note:
+      "The ancestor. Everything else in the folder descends from it. Two rounds of edits happened after this save, so it is not current — but note that this is the file the lock artefact places someone in two days later.",
+  },
+  {
+    id: "final",
+    name: "proposal_final.docx",
+    size: "86 KB",
+    modified: "15 Mar 2027, 16:40",
+    by: "R. Adeyemi",
+    verdict: "superseded",
+    note:
+      "Superseded sixty seconds after it was written, by a file of identical size. Whatever changed between this and final2 was small enough not to move the byte count. The name is a claim that turned out to be wrong within the minute.",
+  },
+  {
+    id: "final2",
+    name: "proposal_final2.docx",
+    size: "86 KB",
+    modified: "15 Mar 2027, 16:41",
+    by: "R. Adeyemi",
+    verdict: "authoritative",
+    note:
+      "Authoritative. It is the last save in the line of work that actually accumulated content, and it is the only document here corroborated by an independent artefact: the PDF exported eleven minutes later. Its filename is no more trustworthy than the others — what supports it is the export and the lock file, not the word final.",
+  },
+  {
+    id: "pdf",
+    name: "proposal.pdf",
+    size: "240 KB",
+    modified: "15 Mar 2027, 16:52",
+    by: "R. Adeyemi",
+    verdict: "derived",
+    note:
+      "An export, not a source. Its use here is corroborative: written eleven minutes after final2, it fixes what final2 contained at that moment. An export can date a source. It cannot stand in for one, because you cannot continue the work in it.",
+  },
+  {
+    id: "old-pdf",
+    name: "proposal_old.pdf",
+    size: "238 KB",
+    modified: "12 Mar 2027, 08:30",
+    by: "R. Adeyemi",
+    verdict: "derived",
+    note:
+      "An export of something that predates every .docx in the folder. A dead end, and the only filename here that describes its contents accurately.",
+  },
+  {
+    id: "lock",
+    name: "~$oposal.docx",
+    size: "162 B",
+    modified: "16 Mar 2027, 09:58",
+    by: "T. Nwachukwu",
+    verdict: "not a document",
+    note:
+      "Not a document — a lock file, written by the word processor while a file is open and usually deleted on close. The name is the name of the file it locks with the first two characters replaced. It locks proposal.docx, not final2. Nobody created this deliberately, which is exactly why it is the most reliable thing in the folder.",
+  },
+  {
+    id: "fixed",
+    name: "proposal_FIXED.docx",
+    size: "71 KB",
+    modified: "16 Mar 2027, 11:02",
+    by: "T. Nwachukwu",
+    verdict: "superseded",
+    note:
+      "The most recent document, and not the authoritative one. It is 15 KB smaller than the file it appears to fix, and the lock file places its author in proposal.docx an hour earlier. It descends from the 14 March original, so it does not contain the 15 March edits at all. Recency is the only ground it has.",
+  },
+];
+
+const answer = candidates.find((candidate) => candidate.verdict === "authoritative")!;
+---
+
+<section class="wfic" aria-labelledby="wfic-heading">
+  <h3 id="wfic-heading">Which file is current?</h3>
+  <p class="wfic-intro">
+    Seven files, recovered from one shared folder. The metadata is intact and
+    it does not agree with itself. Inspect it, choose the file you would send
+    if someone asked for the proposal, then read the reasoning. Nothing is
+    scored — the reasoning is the point, and it covers every file, not only
+    the one you picked.
+  </p>
+
+  <form class="wfic-form" data-wfic-form>
+    <fieldset>
+      <legend>Candidates</legend>
+      <ol class="wfic-list">
+        {
+          candidates.map((candidate) => (
+            <li class="wfic-item" data-candidate={candidate.id}>
+              <label class="wfic-label">
+                <input type="radio" name="wfic-choice" value={candidate.id} />
+                <span class="wfic-name">{candidate.name}</span>
+                <span class="wfic-meta">{candidate.size}</span>
+                <span class="wfic-meta">{candidate.modified}</span>
+                <span class="wfic-meta">{candidate.by}</span>
+              </label>
+              <p class="wfic-note" data-wfic-note hidden>
+                <span class="wfic-verdict">{candidate.verdict}</span>
+                {candidate.note}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </fieldset>
+
+    <button type="submit" class="wfic-submit">Show the reasoning</button>
+  </form>
+
+  <div class="wfic-result" data-wfic-result tabindex="-1" hidden>
+    <p>
+      <strong>The authoritative file is {answer.name}.</strong> Not because of
+      its name, and not because it is the newest — it is not. The two artefacts
+      that settle it are the export, which fixes what that file contained at
+      16:52, and the lock file, which shows that the person who later wrote
+      <code>proposal_FIXED.docx</code> had the wrong document open.
+    </p>
+    <p>
+      Note which ground you were using. If you chose <code>proposal_FIXED.docx</code>,
+      you were applying recency, which is the ground a sync service would have
+      applied, and it is wrong here for a reason no timestamp can show you: the
+      most recent edit was made to a stale copy. Reconstructing the lineage is
+      what defeats it.
+    </p>
+  </div>
+</section>
+
+<script>
+  function initFileInspections() {
+    for (const widget of document.querySelectorAll<HTMLElement>(".wfic")) {
+      if (widget.dataset.wficReady === "true") continue;
+      widget.dataset.wficReady = "true";
+
+      const form = widget.querySelector<HTMLFormElement>("[data-wfic-form]");
+      const result = widget.querySelector<HTMLElement>("[data-wfic-result]");
+      if (!form || !result) continue;
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const chosen = form.querySelector<HTMLInputElement>("input[name='wfic-choice']:checked");
+        for (const item of widget.querySelectorAll<HTMLElement>(".wfic-item")) {
+          const note = item.querySelector<HTMLElement>("[data-wfic-note]");
+          if (note) note.hidden = false;
+          item.classList.toggle(
+            "wfic-item--chosen",
+            chosen !== null && item.dataset.candidate === chosen.value,
+          );
+        }
+
+        result.hidden = false;
+        const submit = form.querySelector<HTMLButtonElement>(".wfic-submit");
+        if (submit) submit.hidden = true;
+        result.focus();
+      });
+    }
+  }
+
+  initFileInspections();
+  document.addEventListener("astro:page-load", initFileInspections);
+</script>
+
+<style>
+  .wfic {
+    margin-block: 2rem;
+    padding: 1.25rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .wfic h3 {
+    margin-block: 0 0.75rem;
+  }
+
+  .wfic-intro {
+    margin-block: 0 1rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .wfic fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .wfic legend {
+    padding: 0;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .wfic-list {
+    margin: 0.5rem 0 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .wfic-item {
+    border-block-end: 1px solid var(--at-divider);
+  }
+
+  .wfic-item:last-child {
+    border-block-end: 0;
+  }
+
+  .wfic-item--chosen {
+    background: var(--at-primary-tint, var(--at-bg-elevated));
+  }
+
+  .wfic-label {
+    display: grid;
+    grid-template-columns: auto minmax(12rem, 2fr) 1fr 1.4fr 1fr;
+    gap: 0.5rem 1rem;
+    align-items: baseline;
+    padding: 0.5rem 0.35rem;
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-sm);
+    cursor: pointer;
+  }
+
+  .wfic-label:hover {
+    background: var(--at-bg);
+  }
+
+  .wfic-meta {
+    color: var(--at-text-secondary);
+  }
+
+  .wfic-note {
+    margin: 0;
+    padding: 0 0.35rem 0.75rem 2.1rem;
+    font-size: var(--at-font-size-sm);
+  }
+
+  .wfic-verdict {
+    display: inline-block;
+    margin-inline-end: 0.5rem;
+    padding: 0.05rem 0.45rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .wfic-submit {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--at-primary);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    color: var(--at-text);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-sm);
+    cursor: pointer;
+  }
+
+  .wfic-submit:hover {
+    background: var(--at-primary-tint, var(--at-bg-elevated));
+  }
+
+  .wfic-result {
+    margin-block-start: 1rem;
+    padding-block-start: 1rem;
+    border-block-start: 1px solid var(--at-divider);
+  }
+
+  .wfic-result p {
+    font-size: var(--at-font-size-sm);
+  }
+
+  @media (width < 40rem) {
+    .wfic-label {
+      grid-template-columns: auto 1fr;
+    }
+
+    .wfic-name {
+      grid-column: 2;
+    }
+
+    .wfic-meta {
+      grid-column: 2;
+      font-size: var(--at-font-size-xs);
+    }
+  }
+</style>

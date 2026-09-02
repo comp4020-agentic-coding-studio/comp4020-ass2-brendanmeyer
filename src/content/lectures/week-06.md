@@ -8,6 +8,8 @@ date: 2027-03-29
 teachers:
   - idris-fenn
 slides: /decks/week-06/
+related:
+  - sessions/06-reading-the-difference
 ---
 
 A machine cannot see that you rewrote a paragraph. It sees that some lines

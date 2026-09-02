@@ -1,0 +1,64 @@
+---
+title: Reading the Difference
+description:
+  Two exercises at the screen — read a real diff of this site's own syllabus,
+  then use conflicting metadata to decide which file in a folder is current
+week: 6
+date: 2027-03-29
+teachers:
+  - idris-fenn
+spec:
+  - the one thing the syllabus diff reports accurately and the one thing it cannot report, both written down
+  - a file chosen from the inspection package before reading the reasoning, and the ground you used to choose it
+  - one artefact in that package that nobody created deliberately, and what it establishes
+---
+
+import DiffViewer from "../../components/widgets/DiffViewer.astro";
+import WhichFileIsCurrent from "../../components/widgets/WhichFileIsCurrent.astro";
+
+This lab is two exercises, both done here on the page. There is nothing to
+bring. Work through them in order — the second one depends on having seen
+what the first one refuses to tell you.
+
+## One: read a diff of this site
+
+The syllabus you are enrolled under has been revised once. Its version header
+says so, and says what changed. Below is the machine's account of the same
+revision, computed from the two week lists by the method in the lecture.
+
+<DiffViewer />
+
+Write down two things. First, the thing the diff reports accurately, which is
+worth stating plainly because it is genuinely useful. Second, the thing it
+cannot report — read the version header on the [syllabus](/syllabus/) and
+compare what a person wrote about that revision with what the comparison
+produced. The gap between the two is the subject of this week.
+
+One of the five differences it reports is not a difference. Find it before
+you read the note underneath, and say what would have to change about the
+comparison for it to know.
+
+## Two: decide which file is current
+
+The diff told you where two versions differ. It did not tell you which to
+keep, because that is not a question about differences. Here is a folder
+where you have to answer it anyway.
+
+<WhichFileIsCurrent />
+
+Choose before you reveal the reasoning. Then write down the ground you were
+actually using — recency, lineage, corroboration, or the filename — and
+whether the reasoning changed your mind. If it did not, say what would have.
+
+## Afterwards
+
+Identify the one artefact in that package that nobody created on purpose,
+and what it establishes that no deliberately written file in the folder does.
+That artefact is the whole lesson: the most reliable evidence in a folder is
+usually the residue of an operation rather than anything a person chose to
+record.
+
+This package is a small, resolvable version of the
+[Which One Is Real?](/assessments/which-one-is-real/) assessment. That one is
+larger, some of its evidence contradicts itself, and it does not show you the
+answer.
