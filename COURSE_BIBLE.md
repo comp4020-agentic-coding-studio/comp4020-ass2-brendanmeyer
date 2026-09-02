@@ -90,14 +90,23 @@ This week should cover both halves without treating them as two topics
 bolted together — open on reconstruction-from-fragments, then pivot to how
 archivists turned that into a discipline.
 
-Each weekly page should: state the week's core question up top, hold to
-one idea for the week (resist covering three loosely-related things),
-and end pointing at the next week's question so the sequence reads as an
-argument, not a list.
+Each week has two pages, not one: a lecture page and a lab page (the site's
+`sessions` collection, labelled "Labs"). The lecture states the week's core
+question up top, holds to one idea (resist covering three loosely-related
+things), and ends pointing at the next week's question, so the sequence
+reads as an argument, not a list. The lab is not a discussion prompt or a
+reading-response form — it's a small hands-on forensic task that makes the
+same week's question concrete (inspect these files, spot the fake metadata,
+reconstruct this timeline). Weeks 6 and 7 already have this covered: their
+lab *is* Widget 2 and Widget 3 respectively — don't also write a separate
+generic lab task for those two weeks.
 
-Final synthesis / capstone name: **The Version History** (used for the
-final project exhibition/presentation of Assessment 4-adjacent capstone
-work, if the site includes a capstone showcase page).
+Every week also gets a slide deck, built from the lecture page's content
+rather than duplicating it wholesale — the deck is the lecture compressed to
+slide form, not a second draft of the same argument.
+
+Final synthesis / capstone name: **The Version History** — see the Closing
+Page section below for the full spec; it is in scope, not optional.
 
 ---
 

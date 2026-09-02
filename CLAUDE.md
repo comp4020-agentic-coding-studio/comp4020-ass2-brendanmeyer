@@ -92,21 +92,32 @@ they get replicated across 12 weeks of content:
 1. Homepage / course landing page (this sets the voice and the version-header
    pattern for everything downstream — get this right before anything else).
 2. Syllabus / course overview page.
-3. One full weekly page, built as the template for the other 11 — don't write
-   all 12 weeks until this one is approved-quality. **Structure is settled:
-   one page per week, no lecture/studio sub-page split, for every week.**
-4. Remaining weekly pages (2–12).
+3. One full week, built as the template for the other 11 — don't write all
+   12 weeks until this one is approved-quality. **Structure is settled: every
+   week has three pieces, using both fixed collections as the platform nav
+   already implies — a `lectures` entry (states and argues the week's core
+   question; carries the week's `slides:` link), a `sessions` entry (relabeled
+   "Labs" via `sessionLabels` — a small hands-on forensic task illustrating
+   the same question, not a discussion prompt), and a deck in `src/decks/`
+   for the lecture. The lecture and lab pages are cross-linked, not merged
+   into one.**
+4. Remaining weeks (2–12): lecture page, lab page, deck, for each.
 5. Assessment pages 1–4 (Duplicate Audit, Which One Is Real?, Merge Conflict
    In Writing, Format Autopsy) — full specs in the bible. **Each is its own
-   standalone page, cross-linked with (not nested inside) its weekly page.**
+   standalone page, cross-linked with (not nested inside) its lecture and lab
+   pages.**
 6. Interactive widgets 1–3 (Which File Is Current?, Diff Viewer, Merge
-   Conflict Resolver) — full specs in the bible. **Each is embedded inline
-   in its supporting weekly page (weeks 6 and 7), not a standalone page.**
+   Conflict Resolver) — full specs in the bible. **Each is embedded inline in
+   its supporting week's lab page (weeks 6 and 7), not a standalone page —
+   and for those two weeks the widget is the lab; don't also write a
+   separate generic lab task.**
 7. Closing page — The Version History (ungraded synthesis page, after week
    12; see bible). Build this after the four assessments exist, since it
    references them.
 8. Nav, footer, 404, any remaining connective pages.
-9. Coherence pass (§6) — for this build, explicitly check: does every
+9. Coherence pass (§6) — for this build, explicitly check: does every week
+   have a lecture page, a lab page, and a deck that agree on title and
+   order, and does each lecture page link to its deck; does every
    assessment page link back to its week and vice versa; are widgets
    actually embedded (not orphaned standalone pages); does the closing
    page's reflection prompt accurately describe all four assessments as
@@ -117,8 +128,10 @@ they get replicated across 12 weeks of content:
 Before considering the site done, re-read it as a single document, in order,
 and check:
 
-- Do the syllabus week list, the actual weekly pages, and any homepage
+- Do the syllabus week list, the actual lecture/lab pages, and any homepage
   preview of the schedule all agree on titles, order, and count?
+- Does every week have a lecture page, a lab page, and a deck, and does the
+  lecture page link to its deck?
 - Does every assessment page's due-week claim match where that content
   actually lands in the weekly sequence?
 - Is any term introduced in week 6 used casually in week 3 without
