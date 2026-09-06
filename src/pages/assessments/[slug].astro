@@ -8,6 +8,7 @@ import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import MarkingModel from "../../components/MarkingModel.astro";
 import VersionHeader from "../../components/VersionHeader.astro";
 import { formatCourseDate } from "../../lib/dates";
+import { parseVersionMeta } from "../../lib/version-header";
 import { graphCollections, siteConfig } from "../../site-config";
 
 export async function getStaticPaths() {
@@ -20,6 +21,7 @@ export async function getStaticPaths() {
 
 const { assessment } = Astro.props;
 const { Content } = await render(assessment);
+const { version, revisions } = parseVersionMeta(assessment.data);
 ---
 
 <ContentLayout
@@ -28,9 +30,9 @@ const { Content } = await render(assessment);
   {...siteConfig}
 >
   <VersionHeader
-    version={assessment.data.version}
+    version={version}
     status={assessment.data.draft ? "DRAFT" : "CURRENT"}
-    history={assessment.data.revisions}
+    history={revisions}
   />
   {
     assessment.data.draft && (

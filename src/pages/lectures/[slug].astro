@@ -7,6 +7,7 @@ import { withBase } from "astro-theme-university/url";
 import TeachingTeam from "../../components/TeachingTeam.astro";
 import VersionHeader from "../../components/VersionHeader.astro";
 import { formatCourseDate } from "../../lib/dates";
+import { parseVersionMeta } from "../../lib/version-header";
 import { graphCollections, siteConfig } from "../../site-config";
 
 export async function getStaticPaths() {
@@ -17,13 +18,14 @@ export async function getStaticPaths() {
 const { lecture } = Astro.props;
 const { Content } = await render(lecture);
 const title = `Week ${lecture.data.week}: ${lecture.data.title}`;
+const { version, revisions } = parseVersionMeta(lecture.data);
 ---
 
 <ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
   <VersionHeader
-    version={lecture.data.version}
+    version={version}
     status={lecture.data.draft ? "DRAFT" : "CURRENT"}
-    history={lecture.data.revisions}
+    history={revisions}
   />
   <p><strong>{formatCourseDate(lecture.data.date)}</strong></p>
   {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
