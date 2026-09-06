@@ -63,6 +63,8 @@ Concrete rules:
 - Humor comes from specificity and deadpan understatement, not jokes,
   puns, or winking asides. If a line is trying to be funny, cut the
   effort and let the fact be funny on its own.
+- No em dashes. Rewrite as two sentences, or use a comma, colon, or
+  parenthetical instead.
 - Write every piece of content — syllabus, assignment prompts, widget
   copy, nav microcopy, 404 page, footer — in this same voice. Voice
   consistency across the whole site is itself a coherence signal graders
