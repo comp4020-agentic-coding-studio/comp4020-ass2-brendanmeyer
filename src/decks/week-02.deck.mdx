@@ -1,6 +1,6 @@
 ---
 title: What Is a File?
-description: Week 2 — identity, metadata, hashes, and why "the same file" is four different claims
+description: 'Week 2: identity, metadata, hashes, and why "the same file" is four different claims'
 ---
 
 {/* _class: impact */}
@@ -11,7 +11,7 @@ Identity is not a property. It's a claim someone checks.
 
 ---
 
-## Test 1 — Name
+## Test 1: Name
 
 Two files are "the same" if they're called the same thing.
 
@@ -19,7 +19,7 @@ Everyone's default test. Trust it least.
 
 ---
 
-## Test 2 — Metadata
+## Test 2: Metadata
 
 Size, modified time, permissions, owner.
 
@@ -27,7 +27,7 @@ Rewritable with one command. Doesn't survive a copy.
 
 ---
 
-## Test 3 — Content
+## Test 3: Content
 
 A hash of the bytes.
 
@@ -35,7 +35,7 @@ Identical hash, identical content. Full stop. Says nothing else.
 
 ---
 
-## Test 4 — Reference
+## Test 4: Reference
 
 The inode a name resolves to.
 
@@ -116,7 +116,7 @@ Copies vs. clones.
 ```notes
 The collision matters here for a narrower reason than the cryptographic one:
 it is a case where the content test returns "same" for two files nobody would
-call the same. Do not overstate it — SHA-256 is not affected, and this took
+call the same. Do not overstate it: SHA-256 is not affected, and this took
 6,500 CPU years. The point is that every one of the four tests answers its own
 question, including the strongest.
 ```

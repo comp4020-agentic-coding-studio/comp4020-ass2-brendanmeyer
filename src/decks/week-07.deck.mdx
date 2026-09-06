@@ -1,6 +1,6 @@
 ---
 title: Merge Conflict
-description: Week 7 — two true histories, and the decision the tooling conceals
+description: "Week 7: two true histories, and the decision the tooling conceals"
 ---
 
 {/* _class: impact */}
@@ -18,7 +18,7 @@ A system reporting that it has reached a decision it has no basis to make.
 Common ancestor, two descendants. For each region: did one side change it,
 both, or neither?
 
-One side changed it, the other didn't — apply it. No preference expressed,
+One side changed it, the other didn't: apply it. No preference expressed,
 nothing to weigh.
 
 ---
@@ -55,9 +55,9 @@ One of them becomes what the record says happened.
 
 ## Three properties the tooling conceals
 
-- **Lossy** — the discarded version goes nowhere a reader will find
-- **Unattributed** — the file records who merged, not who was overruled
-- **Unexplained** — no format has a field for why
+- **Lossy:** the discarded version goes nowhere a reader will find
+- **Unattributed:** the file records who merged, not who was overruled
+- **Unexplained:** no format has a field for why
 
 ---
 
@@ -82,7 +82,7 @@ What entitled them?
 - <cite>A State-of-the-Art Survey on Software Merging</cite>
   <span class="ref-meta">Tom Mens, *IEEE Transactions on Software Engineering* 28(5), 2002, 449–462.
   Surveys merging from purely textual through syntactic to semantic techniques. The
-  further up that ladder a tool climbs, the more it can combine — and no rung reaches
+  further up that ladder a tool climbs, the more it can combine. No rung reaches
   intent.</span>
   [dl.acm.org](https://dl.acm.org/doi/10.1109/TSE.2002.1000449)
 - <cite>A Formal Investigation of Diff3</cite>
@@ -95,5 +95,5 @@ What entitled them?
 The Khanna paper is the honest one to cite here: people assume edits to
 well-separated regions never conflict, and formalising that assumption is
 delicate. Useful against the objection "surely a better tool would just handle
-it" — better tools handle more, and the remaining case is not a tooling gap.
+it": better tools handle more, and the remaining case is not a tooling gap.
 ```
