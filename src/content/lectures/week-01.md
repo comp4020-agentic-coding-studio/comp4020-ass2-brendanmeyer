@@ -1,15 +1,17 @@
 ---
 title: final_FINAL_revised2
 description:
-  Why humans version so badly even when they are smart — and why the
+  Why humans version so badly even when they are smart, and why the
   filename, not the file, has been doing the work all along
 week: 1
 date: 2027-02-22
 teachers:
   - marisol-quaye
 slides: /decks/week-01/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Copyedited for house style.
   - version: "1.0"
     note:
       Asserted that the filename was standing in for a missing field without
@@ -38,12 +40,12 @@ final_FINAL_revised2.docx
 A filename is one string, and by the last entry that string is carrying four
 separate assertions at once:
 
-- **Supersession** — this replaces `final.docx`, which replaced something
+- **Supersession**: this replaces `final.docx`, which replaced something
   before it.
-- **Sequence** — `revised2` says a second round happened, and implies a first
+- **Sequence**: `revised2` says a second round happened, and implies a first
   one you are expected to already know about.
-- **Currency** — as of now, this is the one to use.
-- **Finality** — `final`, twice, asserting that no further version is coming.
+- **Currency**: as of now, this is the one to use.
+- **Finality**: `final`, twice, asserting that no further version is coming.
 
 None of the four is metadata the filesystem tracks. There is no *supersedes*
 field, no *current* flag, no *round* counter. So all four go into the name,
@@ -51,7 +53,7 @@ because the name is the only field in the entire arrangement that everyone
 involved can see, write to, and agree to read.
 
 That is the whole mechanism, and it explains the shape of the result. The
-name has no schema, so a claim cannot be corrected — only appended to, which
+name has no schema, so a claim cannot be corrected, only appended to, which
 is why these strings grow rightward and never shrink. It has no authority
 behind it, so `final` is a claim and not a guarantee. And it is not
 exclusive, so anyone can file a competing claim in the same field.
@@ -65,12 +67,12 @@ personal.
 
 ## Versioning is older than version control
 
-Treat "versioning" and "version control" as different things. Versioning —
-keeping track of which state of a work is current, and what changed to get
-there — is a practice as old as revision itself: monks correcting a
+Treat "versioning" and "version control" as different things. Versioning is
+the practice of keeping track of which state of a work is current, and what
+changed to get there. It is as old as revision itself: monks correcting a
 manuscript, an editor marking up a typescript in red pen, a filing cabinet
-with folders labelled "drafts" and "final." Version *control* — software that
-does this automatically, with a shared and enforced record — is barely sixty
+with folders labelled "drafts" and "final." Version *control*, software that
+does this automatically with a shared and enforced record, is barely sixty
 years old, and most people writing documents today have never opened it.
 Week 5 covers what came before it. This week is about what people do in its
 absence.

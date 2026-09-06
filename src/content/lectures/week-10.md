@@ -8,8 +8,10 @@ date: 2027-04-26
 teachers:
   - idris-fenn
 slides: /decks/week-10/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Punctuation standardised across the page.
   - version: "1.0"
     note:
       Described the conversion chain in prose without setting out what each
@@ -38,15 +40,15 @@ TXT                   no        no       no      no      guessed
 
 Print to PDF and the comments are gone, the revision history is gone, the
 styles have been flattened into positioned glyphs. Run OCR over that PDF and
-the glyphs become characters again — but guessed characters, with an error
+the glyphs become characters again, but guessed characters, with an error
 rate, and now with no layout. Export to TXT and the last of the structure
 goes. Read down any column and it only ever degrades. No step in the chain
 restores something an earlier step gave up, and no step is required to
 mention that it gave it up.
 
 At no point does anything report a failure. Each step produced a valid file
-in a valid format. The question the format autopsy asks — at what point did
-it stop being the same file? — has no mechanical answer, because no step
+in a valid format. The question the format autopsy asks (at what point did
+it stop being the same file?) has no mechanical answer, because no step
 recorded what it dropped.
 
 ## The chain is worse than its steps
@@ -65,7 +67,7 @@ by name and by intent, and by content it is a reconstruction.
 
 ## Where this goes
 
-You now have a document whose history is real but unrecorded — losses that
+You now have a document whose history is real but unrecorded: losses that
 happened, at identifiable steps, with no log of them anywhere. Next week is
 about doing that work backwards: reconstructing what happened to a thing
 from what the thing still carries.

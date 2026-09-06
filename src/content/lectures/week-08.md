@@ -1,15 +1,17 @@
 ---
 title: The Canonical Version
 description:
-  Authority — who gets to say which copy is real, and on what grounds, once
+  Authority. Who gets to say which copy is real, and on what grounds, once
   a hash or a timestamp can no longer settle the question
 week: 8
 date: 2027-04-12
 teachers:
   - idris-fenn
 slides: /decks/week-08/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Sentence-level cleanup; no change in meaning.
   - version: "1.0"
     note:
       Listed the four grounds and stated that they conflict, without a case
@@ -25,17 +27,17 @@ something.
 
 ## Four grounds people actually use
 
-- **Possession.** Whoever holds the master copy — the signed contract in
+- **Possession.** Whoever holds the master copy: the signed contract in
   legal's filing system, the "source of truth" spreadsheet on one person's
   laptop. Authority by custody, regardless of who else has a copy.
-- **Position.** Whoever's role entitles them to decide — an editor, a
+- **Position.** Whoever's role entitles them to decide: an editor, a
   maintainer, a manager with sign-off. Authority by standing, independent of
   who actually touched the file most recently.
 - **Recency.** Whoever edited last. The most commonly used ground, and the
   weakest: "latest" is a timestamp, not a judgement, and a timestamp can't
   tell you whether the last person to touch the file had any standing to.
 - **Consensus.** Whoever most people currently defer to. This can shift
-  without the file changing at all — a version becomes canonical because
+  without the file changing at all: a version becomes canonical because
   enough people started treating it that way, not because of anything that
   happened to its bytes.
 
@@ -70,5 +72,5 @@ to be argued for.
 Every one of these grounds is something a human applies with judgement,
 case by case. Next week looks at what happens when a machine has to make
 this same decision automatically, in real time, with no human available to
-ask — because that is exactly what a file-sync service does, constantly,
+ask, because that is exactly what a file-sync service does, constantly,
 and mostly gets away with.

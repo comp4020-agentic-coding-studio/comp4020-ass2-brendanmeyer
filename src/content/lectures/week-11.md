@@ -8,8 +8,10 @@ date: 2027-05-03
 teachers:
   - marisol-quaye
 slides: /decks/week-11/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Text tightened; nothing substantive changed.
   - version: "1.0"
     note:
       Ran the residue signals together in a paragraph, so the evidence a
@@ -21,14 +23,14 @@ related:
 Nothing so far in this course has kept a reliable record of itself. Naming
 was a workaround. Save As destroyed the branch structure it created. Sync
 reported a timestamp. Conversion dropped things silently. What you are left
-with is a folder of artefacts and no log — which is the normal condition,
+with is a folder of artefacts and no log, which is the normal condition,
 not a special case, and it is where reconstruction starts.
 
 ## Reconstruction from fragments
 
 Reconstruction reads a history out of what the artefacts still carry, on the
-assumption that every operation leaves residue somewhere. Not proof —
-residue:
+assumption that every operation leaves residue somewhere. Not proof.
+Residue:
 
 - **A modification time earlier than the creation time.** The file was
   copied to this location, not authored here. The copy operation carried the
@@ -48,7 +50,7 @@ Every one of these signals is also defeasible. A timestamp can be set
 deliberately. Metadata can be stripped by a tool that had no opinion about
 it. Reconstruction produces an argument with stated confidence, not a
 finding of fact, and a reconstruction that does not say which parts it is
-unsure of is not a reconstruction — it is a story.
+unsure of is not a reconstruction. It is a story.
 
 ## The same work, formalised in advance
 
@@ -56,10 +58,10 @@ Archivists reached this problem first, and their response was to stop doing
 it after the fact. Nineteenth-century archival practice built two principles
 that hold whether the records are paper or not.
 
-**Provenance** — records are kept grouped by who created them, not
+**Provenance**: records are kept grouped by who created them, not
 reorganised by subject. Regrouping a collection by topic destroys the
 evidence of who held what, which is often the more useful fact. **Chain of
-custody** — every transfer of the records is itself recorded, so a gap in
+custody**: every transfer of the records is itself recorded, so a gap in
 the custody log is visible as a gap rather than passing as continuity.
 
 Both principles say the same thing: the history of a thing is part of the

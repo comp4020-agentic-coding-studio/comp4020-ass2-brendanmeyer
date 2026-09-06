@@ -1,15 +1,17 @@
 ---
 title: Before Git
 description:
-  Version control as an old problem, not a new tool — scribal copying,
+  Version control as an old problem, not a new tool. Scribal copying,
   carbon paper, redlined contracts, and what RCS actually automated
 week: 5
 date: 2027-03-22
 teachers:
   - marisol-quaye
 slides: /decks/week-05/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Cleaned up for consistency with the rest of the site.
   - version: "1.0"
     note:
       Ended on the cost of solving the problem dropping, without naming what
@@ -28,9 +30,9 @@ hand. The tools looked nothing like a repository. The problem was identical.
 - **Scribal copying.** Every hand-copied manuscript introduces small errors.
   Textual critics reconstruct a lost original by comparing surviving copies
   and inferring which differences are copying mistakes and which are
-  deliberate edits — the same operation as diffing branches to find a common
+  deliberate edits: the same operation as diffing branches to find a common
   ancestor, done on parchment, sometimes centuries after the fact.
-- **Carbon paper.** A duplicate made at the moment of writing, not after —
+- **Carbon paper.** A duplicate made at the moment of writing, not after:
   the copy and the original diverge from zero, not from a later save. This
   is the mechanical ancestor of a commit: one write event, two identical
   records, guaranteed to match because they were made by the same stroke of
@@ -50,8 +52,8 @@ hand. The tools looked nothing like a repository. The problem was identical.
 Git and its predecessors didn't invent tracking versions, comparing them, or
 attributing changes to people. They made all three fast, reliable, and free,
 for anyone, on anything, without a copyist's patience or a lawyer's
-redlining conventions. The problem — competing near-duplicates, disputed
-authority, lost provenance — is exactly the one from week 1's filename and
+redlining conventions. The problem (competing near-duplicates, disputed
+authority, lost provenance) is exactly the one from week 1's filename and
 week 4's Save As chain. Only the cost of solving it properly dropped.
 
 Note what did not change. Every one of these mechanisms records that a change
@@ -64,8 +66,8 @@ does it instead.
 
 ## Where this goes
 
-Everything since week 1 — the naming schemes, the copy-or-derivative
-judgement calls, the manual branch-and-merge — is still what happens
+Everything since week 1 (the naming schemes, the copy-or-derivative
+judgement calls, the manual branch-and-merge) is still what happens
 whenever the automatic version isn't being used, which is most non-code
 writing, most of the time. Now that there's a formal record of changes, the
 next question is mechanical: how does a machine actually compare two

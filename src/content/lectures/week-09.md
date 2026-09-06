@@ -8,6 +8,10 @@ date: 2027-04-19
 teachers:
   - marisol-quaye
 slides: /decks/week-09/
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Retouched for consistency, not correctness.
 related:
   - sessions/09-anatomy-of-a-conflict-copy
 ---
@@ -21,11 +25,11 @@ folder and deleted without reading.
 ## What the service is actually doing
 
 A sync service has one hard constraint: it cannot ask you. It has to decide
-which version wins, immediately, using only what it can observe — usually a
+which version wins, immediately, using only what it can observe: usually a
 modification timestamp and a change counter, on clocks that belong to
 different machines and don't agree. Last week's four grounds are not
 available to it. Possession is meaningless when every device has a copy.
-Position is unknowable — the service has no idea that one of the two editors
+Position is unknowable: the service has no idea that one of the two editors
 is your supervisor. Consensus can't be polled. Recency is the only ground a
 sync service can mechanically apply, which is why it applies it, which is
 why it is wrong on a predictable schedule.
@@ -50,5 +54,5 @@ it looks like litter rather than a finding.
 ## Where this goes
 
 The conflict copy at least preserves both versions intact. Next week looks
-at the other kind of loss — the kind where nothing is duplicated, nothing is
+at the other kind of loss: the kind where nothing is duplicated, nothing is
 overwritten, and the file quietly stops being what it was anyway.

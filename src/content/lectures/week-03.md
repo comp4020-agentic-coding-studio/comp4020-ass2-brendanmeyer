@@ -1,15 +1,17 @@
 ---
 title: Copies & Clones
 description:
-  Duplication vs. derivation — when a copy stops being a copy and becomes its
+  Duplication vs. derivation, when a copy stops being a copy and becomes its
   own thing, and why no technical test can tell you the moment it happened
 week: 3
 date: 2027-03-08
 teachers:
   - marisol-quaye
 slides: /decks/week-03/
-version: "2.0"
+version: "2.1"
 revisions:
+  - version: "2.0"
+    note: Brought into line with the site's current style.
   - version: "1.0"
     note:
       Compressed the five thresholds into a single sentence, and asserted
@@ -26,11 +28,11 @@ and why it resists a clean definition.
 ## Duplication is an operation. Derivation is a claim.
 
 Copying a file is mechanical: read the bytes, write them somewhere else,
-done. Nothing about the operation itself creates a new work — a copy sitting
+done. Nothing about the operation itself creates a new work: a copy sitting
 untouched next to its original is not a derivative of anything, it's clutter.
 
 Derivation is different. It's the claim that a copy has acquired its own
-purpose, its own audience, its own errors — that it is now being maintained
+purpose, its own audience, its own errors: that it is now being maintained
 on its own terms rather than as a stand-in for the original. Nothing in the
 filesystem marks this transition. There is no flag that flips from "copy" to
 "derivative work." The file itself looks the same the instant before and the
@@ -49,7 +51,7 @@ each defensible:
 - **Independent circulation.** It became its own work when someone sent it to
   someone without reference to the original. The file may not have changed
   at all.
-- **A different audience.** The same text, repurposed — a report becoming a
+- **A different audience.** The same text, repurposed: a report becoming a
   board paper. Identical bytes, different work.
 - **Irreconcilability.** It is a separate work once pulling the two back
   into one would cost more than maintaining both. This one is measurable,
@@ -60,7 +62,7 @@ of them can be satisfied while the bytes stay identical.
 
 There is a reason no technical test is available here, and it is not that
 nobody has built one. Derivation is a claim about how a file will be used
-from now on — who maintains it, who reads it, what it answers for. The bytes
+from now on: who maintains it, who reads it, what it answers for. The bytes
 record what has happened to a file, and no property of what has happened can
 encode what is about to. A hash can tell you two files diverged. It cannot
 tell you that one of them has acquired a separate job.
@@ -74,5 +76,5 @@ that happen to share an ancestor.
 
 The moment a copy diverges, someone eventually has to decide what to do about
 the fact that there are now two of them, related but not identical, both
-still changing. Next week looks at how people handle exactly that — usually
+still changing. Next week looks at how people handle exactly that, usually
 without ever using the word for what they're doing.
