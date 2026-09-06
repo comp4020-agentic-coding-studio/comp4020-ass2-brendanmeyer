@@ -20,6 +20,10 @@ spec:
   - one file identified as authoritative, with the ground for that claim stated
   - at least one competing candidate addressed and ruled out on stated grounds
   - every inference marked as an inference, and every gap in the evidence marked as a gap
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Line-edited for consistency with the rest of the course.
 related:
   - lectures/week-06
   - assessments/merge-conflict-in-writing
@@ -42,8 +46,8 @@ in the package is labelled.
 Two things are being assessed and they are separable. The timeline is
 forensic: what happened, in what order, supported by timestamps, formats,
 sizes, filenames and content. The verdict is not forensic. Deciding which
-file is authoritative means choosing a ground — possession, position,
-recency, consensus — and defending it. A timeline with no verdict is
+file is authoritative means choosing a ground (possession, position,
+recency, consensus) and defending it. A timeline with no verdict is
 incomplete. A verdict with no ground is an assertion, and recency on its own
 is the weakest available ground, so if that is all the package supports, say
 that in those words.
@@ -56,7 +60,7 @@ by quietly picking whichever reading was convenient.
 ## What you submit
 
 One document: the timeline, then the verdict. Reference files by their exact
-filenames. State inferences as inferences — "the mtime precedes the creation
+filenames. State inferences as inferences: "the mtime precedes the creation
 time, so this was copied here rather than authored here" is an inference with
 its evidence attached, and that is the form the whole timeline should take.
 

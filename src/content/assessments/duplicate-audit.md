@@ -1,7 +1,7 @@
 ---
 title: The Duplicate Audit
 description:
-  Document one file family from your own storage — every copy, export,
+  Document one file family from your own storage. Every copy, export,
   screenshot and renamed version of a single piece of work you actually made
 week: 4
 due: 2027-03-19T17:00:00+10:00
@@ -17,8 +17,12 @@ marking:
 spec:
   - one file family from your own storage, at least six members, all of them real
   - a genealogy showing how each member relates to the others, as a diagram or an annotated list
-  - each member classified — ancestor, copy, export, snapshot, fork, or dead end
+  - each member classified as ancestor, copy, export, snapshot, fork, or dead end
   - the evidence for each relationship named, and any relationship you could not establish marked as unestablished
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Copyedited for house style; the requirements are unchanged.
 related:
   - lectures/week-03
   - sessions/03-when-did-it-diverge
@@ -41,7 +45,7 @@ The work is in the classification, not the collection. Copying is not
 exporting; an export is a conversion with a new format and usually a loss.
 A snapshot is a copy taken deliberately at a moment; a dead end is a branch
 nobody continued. Naming which is which forces the distinction to be made on
-evidence — file dates, formats, content — rather than on memory, which is
+evidence (file dates, formats, content) rather than on memory, which is
 the part this audit is testing.
 
 Expect at least one relationship you cannot establish. Two files exist,
@@ -51,8 +55,8 @@ That is a finding. Filling the gap with a plausible guess is not.
 
 ## What you submit
 
-One document containing the genealogy — a diagram or an annotated list, either
-is fine — and the classification and evidence for each member. Use the real
+One document containing the genealogy (a diagram or an annotated list, either
+is fine) and the classification and evidence for each member. Use the real
 filenames. If a filename would disclose something you would rather not submit,
 say so and use a consistent substitute throughout; do not silently tidy the
 names, because the names are evidence.
