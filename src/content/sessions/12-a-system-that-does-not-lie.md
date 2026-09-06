@@ -7,6 +7,10 @@ week: 12
 date: 2027-05-10
 teachers:
   - idris-fenn
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Copyedited; the policy asked for stands as before.
 spec:
   - a written policy for one real folder covering how currency is marked and what gets deleted when
   - the policy applied, with a record of what was deleted and on whose decision
@@ -15,7 +19,7 @@ spec:
 
 ## Before the session
 
-Pick one folder you own and are responsible for — not a shared drive, not a
+Pick one folder you own and are responsible for, not a shared drive, not a
 hypothetical. It should contain at least one set of near-duplicates you have
 been avoiding. Bring the list of what is in it.
 
@@ -33,7 +37,7 @@ decision with an author.
 
 ## Afterwards
 
-There will be at least one case your policy cannot decide — a file you
+There will be at least one case your policy cannot decide: a file you
 cannot classify, or two versions the clauses rank equally. Do not amend the
 policy to make the case disappear. Write it down as an open case and say
 what additional information would settle it. That sentence is the most

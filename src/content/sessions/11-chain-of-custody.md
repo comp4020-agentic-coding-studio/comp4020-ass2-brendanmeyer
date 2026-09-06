@@ -7,6 +7,10 @@ week: 11
 date: 2027-05-03
 teachers:
   - marisol-quaye
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Punctuation revised throughout.
 spec:
   - a custody log for one received file, each entry stating what evidence supports it
   - every entry labelled as recorded, inferred, or unknown
@@ -16,7 +20,7 @@ spec:
 ## Before the session
 
 Choose a file that arrived from someone else and has been through at least
-two hands — an attachment forwarded to you, a template someone adapted, a
+two hands: an attachment forwarded to you, a template someone adapted, a
 shared document you inherited. You need something whose history you do not
 already know, because the exercise is reading residue, not recalling events.
 

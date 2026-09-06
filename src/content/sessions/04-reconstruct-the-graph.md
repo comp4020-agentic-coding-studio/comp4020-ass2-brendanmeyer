@@ -7,6 +7,10 @@ week: 4
 date: 2027-03-15
 teachers:
   - idris-fenn
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: A late style pass, applied after publication.
 spec:
   - a real set of at least three related filenames from a "Save As" chain (drafts, an email thread, shared-drive versions)
   - a graph, hand-drawn or written, of which file actually branched from which, based on reading the content
@@ -15,7 +19,7 @@ spec:
 
 ## Before the session
 
-Find a chain of files that grew by repeated "Save As" — draft essays, a
+Find a chain of files that grew by repeated "Save As": draft essays, a
 group assignment passed between collaborators, a document with a folder
 full of `_v2`, `_final`, `_edits` variants. You need at least three files
 with a plausible shared ancestor.
@@ -28,7 +32,7 @@ a dead end nobody built on.
 
 Draw the graph: nodes for files, edges for "this one came from that one."
 Compare it to what the filenames alone would have implied. Chains rarely
-match perfectly — a file named `_v2` sometimes turns out to be a dead-end
+match perfectly. A file named `_v2` sometimes turns out to be a dead-end
 branch nobody merged, while an unremarkable name turns out to be the one
 everyone actually built on.
 

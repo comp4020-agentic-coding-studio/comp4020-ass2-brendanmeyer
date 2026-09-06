@@ -7,6 +7,10 @@ week: 10
 date: 2027-04-26
 teachers:
   - idris-fenn
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Editorial pass, punctuation only, not content.
 spec:
   - one conversion performed, with the source and target formats named
   - an inventory of what did not survive, itemised rather than summarised
@@ -16,7 +20,7 @@ spec:
 ## Before the session
 
 Bring a document you know the contents of well enough to notice what goes
-missing — ideally one with comments, tracked changes, footnotes, a table, or
+missing: ideally one with comments, tracked changes, footnotes, a table, or
 non-Latin characters in it. Pick a single conversion, not a chain. One step
 is enough to see the mechanism, and the Format Autopsy will want the full
 chain later.
@@ -26,7 +30,7 @@ chain later.
 Perform the conversion, then compare source against target and itemise the
 losses. Itemise, not summarise: "three comments, both tracked insertions and
 their attribution, the table's column widths" is a finding; "some
-formatting" is not. Include things that survived in altered form — a heading
+formatting" is not. Include things that survived in altered form: a heading
 that is now merely large bold text has lost its status as a heading even
 though the words are intact.
 
