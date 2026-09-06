@@ -6,7 +6,7 @@ description:
 affiliation: Slop University School of Invented Disciplines
 role: convenor
 email: marisol.quaye@slop.university
-contact: Email for anything about the course as a whole. For feedback on a specific piece of work, bring it to the lab — it is faster and the files are in front of you.
+contact: Email for anything about the course as a whole. For feedback on a specific piece of work, bring it to the lab. It is faster and the files are in front of you.
 photo: ./marisol-quaye.avif
 photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
@@ -22,5 +22,5 @@ careless. They had no field to write the answer in.
 
 Consultation is by appointment in the week after each assessment is returned.
 If you want to argue with a mark, bring the evidence rather than the
-disagreement — that is the same standard the assessments are graded against,
+disagreement. That is the same standard the assessments are graded against,
 and it works.

@@ -1,7 +1,7 @@
 ---
 title: Idris Fenn
 description:
-  Tutor. Runs the labs, and maintains the file packages the course inspects —
+  Tutor. Runs the labs, and maintains the file packages the course inspects,
   including the ones constructed so their metadata contradicts itself.
 affiliation: Slop University School of Invented Disciplines
 role: tutor
