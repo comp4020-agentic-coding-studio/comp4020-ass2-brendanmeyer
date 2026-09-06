@@ -84,6 +84,11 @@ The **version header component** goes on every content page (syllabus,
 weekly pages, assessment pages). It is not decorative — treat it as a real
 piece of UI you design once and reuse everywhere. Spec is in the bible.
 
+When you edit an already-written content page (not a first draft), bump its
+version stamp and add a `revisions` entry describing the change — minor by
+default, major if it feels like the bigger kind of edit. No need to justify
+the call.
+
 ## 5. Build order
 
 Work in this order so early decisions (voice, components) are locked before
