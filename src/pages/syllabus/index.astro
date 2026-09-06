@@ -33,13 +33,13 @@ const weeks: WeekEntry[] = [
   {
     week: 2,
     title: "What Is a File?",
-    question: "Identity, metadata, hashes — what actually makes two files “the same”?",
+    question: "Identity, metadata, hashes: what actually makes two files “the same”?",
     slug: "week-02",
   },
   {
     week: 3,
     title: "Copies & Clones",
-    question: "Duplication vs. derivation — when does a copy become a new work?",
+    question: "Duplication vs. derivation: when does a copy become a new work?",
     slug: "week-03",
   },
   {
@@ -52,7 +52,7 @@ const weeks: WeekEntry[] = [
     week: 5,
     title: "Before Git",
     question:
-      "Scribal copying, RCS, carbon paper, Track Changes — version control as an old problem, not a new tool.",
+      "Scribal copying, RCS, carbon paper, Track Changes: version control as an old problem, not a new tool.",
     slug: "week-05",
   },
   {
@@ -64,25 +64,25 @@ const weeks: WeekEntry[] = [
   {
     week: 7,
     title: "Merge Conflict",
-    question: "Two true, incompatible histories — what actually gets decided when they collide.",
+    question: "Two true, incompatible histories: what actually gets decided when they collide.",
     slug: "week-07",
   },
   {
     week: 8,
     title: "The Canonical Version",
-    question: "Authority — who gets to say which copy is real, and on what grounds.",
+    question: "Authority: who gets to say which copy is real, and on what grounds.",
     slug: "week-08",
   },
   {
     week: 9,
     title: "Sync Is a Lie",
-    question: "Dropbox, Drive, iCloud, conflict copies — distributed systems for civilians.",
+    question: "Dropbox, Drive, iCloud, conflict copies: distributed systems for civilians.",
     slug: "week-09",
   },
   {
     week: 10,
     title: "Conversion Damage",
-    question: "DOCX → PDF → OCR → TXT — at what point did it stop being the same file?",
+    question: "DOCX → PDF → OCR → TXT: at what point did it stop being the same file?",
     slug: "week-10",
   },
   {
@@ -107,13 +107,17 @@ const weeks: WeekEntry[] = [
   {...siteConfig}
 >
   <VersionHeader
-    version="2.0"
+    version="2.1"
     history={[
+      {
+        version: "2.0",
+        note: "Punctuation brought into line with the site's current style.",
+      },
       {
         version: "1.0",
         note:
-          "Thirteen weeks. Week 11 was two separate weeks — Forensic Versioning, then " +
-          "Provenance & Archives — before they were merged: the same work looked at from " +
+          "Thirteen weeks. Week 11 was two separate weeks (Forensic Versioning, then " +
+          "Provenance & Archives) before they were merged: the same work looked at from " +
           "two directions, not two topics.",
       },
     ]}
@@ -140,8 +144,8 @@ const weeks: WeekEntry[] = [
 
   <h2>Schedule</h2>
   <p>
-    Each week is a lecture and a {sessionLabels.singular.toLowerCase()}, not one page split in two
-    — the lecture states the week's question, the {sessionLabels.singular.toLowerCase()} makes it
+    Each week is a lecture and a {sessionLabels.singular.toLowerCase()}, not one page split in two:
+    the lecture states the week's question, the {sessionLabels.singular.toLowerCase()} makes it
     concrete, and each links to the other. Every title below links to that week's lecture. In
     weeks 6 and 7 the {sessionLabels.singular.toLowerCase()} is an exercise you do on the page
     rather than a task you bring to it.
@@ -180,7 +184,7 @@ const weeks: WeekEntry[] = [
   <h2>After week 12</h2>
   <p>
     <a href={withBase("/version-history/")}>The Version History</a> closes the course. It is
-    ungraded and nothing is submitted to it — the four assessments produced real evidence over the
+    ungraded and nothing is submitted to it. The four assessments produced real evidence over the
     semester, and that page is where it gets read back against the claim above.
   </p>
 </ContentLayout>

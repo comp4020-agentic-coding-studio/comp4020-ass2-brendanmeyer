@@ -34,10 +34,14 @@ const artefacts = [
 
 <ContentLayout
   title="The Version History"
-  description="The last entry in the file. Ungraded, and not a fifth assessment — a reading of your own semester's evidence against the claim the course opened with."
+  description="The last entry in the file. Ungraded, and not a fifth assessment: a reading of your own semester's evidence against the claim the course opened with."
   {...siteConfig}
 >
-  <VersionHeader version="1.0" status="CURRENT" />
+  <VersionHeader
+    version="1.1"
+    status="CURRENT"
+    history={[{ version: "1.0", note: "Copyedited for house style." }]}
+  />
 
   <p>
     The course opened by claiming there is no such thing as &ldquo;the
@@ -50,7 +54,7 @@ const artefacts = [
   <blockquote class="closing-prompt">
     <p>
       Across your own semester&rsquo;s evidence, what actually decided which
-      version counted &mdash; and was it ever really the file itself?
+      version counted, and was it ever really the file itself?
     </p>
   </blockquote>
 
@@ -95,9 +99,9 @@ const artefacts = [
 
   <p>
     None of them was broken. They answered the questions they could answer.
-    The remaining question &mdash; which of these is the one that counts
-    &mdash; was never a question about files, which is why twelve weeks of
-    looking at files could only ever bring you to the edge of it.
+    The remaining question (which of these is the one that counts) was
+    never a question about files, which is why twelve weeks of looking at
+    files could only ever bring you to the edge of it.
   </p>
 
   <p class="closing-signoff">
