@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380" role="img" aria-labelledby="cg-title cg-desc">
   <title id="cg-title">A custody log, with its entries labelled by what supports them</title>
-  <desc id="cg-desc">A chain of custody read backwards from now. Two entries are recorded by a system, two are inferred from residue, and one is unknown — an unbridged gap between the earliest inferred entry and the file's origin.</desc>
+  <desc id="cg-desc">A chain of custody read backwards from now. Two entries are recorded by a system, two are inferred from residue, and one is unknown: an unbridged gap between the earliest inferred entry and the file's origin.</desc>
 
   <defs>
     <marker id="cg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">

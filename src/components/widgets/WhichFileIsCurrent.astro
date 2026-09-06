@@ -27,7 +27,7 @@ const candidates: Candidate[] = [
     by: "R. Adeyemi",
     verdict: "superseded",
     note:
-      "The ancestor. Everything else in the folder descends from it. Two rounds of edits happened after this save, so it is not current — but note that this is the file the lock artefact places someone in two days later.",
+      "The ancestor. Everything else in the folder descends from it. Two rounds of edits happened after this save, so it is not current. Note, though, that this is the file the lock artefact places someone in two days later.",
   },
   {
     id: "final",
@@ -47,7 +47,7 @@ const candidates: Candidate[] = [
     by: "R. Adeyemi",
     verdict: "authoritative",
     note:
-      "Authoritative. It is the last save in the line of work that actually accumulated content, and it is the only document here corroborated by an independent artefact: the PDF exported eleven minutes later. Its filename is no more trustworthy than the others — what supports it is the export and the lock file, not the word final.",
+      "Authoritative. It is the last save in the line of work that actually accumulated content, and it is the only document here corroborated by an independent artefact: the PDF exported eleven minutes later. Its filename is no more trustworthy than the others: what supports it is the export and the lock file, not the word final.",
   },
   {
     id: "pdf",
@@ -77,7 +77,7 @@ const candidates: Candidate[] = [
     by: "T. Nwachukwu",
     verdict: "not a document",
     note:
-      "Not a document — a lock file, written by the word processor while a file is open and usually deleted on close. The name is the name of the file it locks with the first two characters replaced. It locks proposal.docx, not final2. Nobody created this deliberately, which is exactly why it is the most reliable thing in the folder.",
+      "Not a document: a lock file, written by the word processor while a file is open and usually deleted on close. The name is the name of the file it locks with the first two characters replaced. It locks proposal.docx, not final2. Nobody created this deliberately, which is exactly why it is the most reliable thing in the folder.",
   },
   {
     id: "fixed",
@@ -100,7 +100,7 @@ const answer = candidates.find((candidate) => candidate.verdict === "authoritati
     Seven files, recovered from one shared folder. The metadata is intact and
     it does not agree with itself. Inspect it, choose the file you would send
     if someone asked for the proposal, then read the reasoning. Nothing is
-    scored — the reasoning is the point, and it covers every file, not only
+    scored. The reasoning is the point, and it covers every file, not only
     the one you picked.
   </p>
 
@@ -134,7 +134,7 @@ const answer = candidates.find((candidate) => candidate.verdict === "authoritati
   <div class="wfic-result" data-wfic-result tabindex="-1" hidden>
     <p>
       <strong>The authoritative file is {answer.name}.</strong> Not because of
-      its name, and not because it is the newest — it is not. The two artefacts
+      its name, and not because it is the newest. It is not. The two artefacts
       that settle it are the export, which fixes what that file contained at
       16:52, and the lock file, which shows that the person who later wrote
       <code>proposal_FIXED.docx</code> had the wrong document open.

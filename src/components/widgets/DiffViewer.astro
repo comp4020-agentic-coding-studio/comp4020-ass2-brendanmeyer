@@ -12,34 +12,34 @@
 // widget cannot drift out of agreement with the two texts it is given.
 
 const versionA = [
-  "Week 1 — final_FINAL_revised2",
-  "Week 2 — What Is a File?",
-  "Week 3 — Copies & Clones",
-  "Week 4 — Save As",
-  "Week 5 — Before Git",
-  "Week 6 — The Diff",
-  "Week 7 — Merge Conflict",
-  "Week 8 — The Canonical Version",
-  "Week 9 — Sync Is a Lie",
-  "Week 10 — Conversion Damage",
-  "Week 11 — Forensic Versioning",
-  "Week 12 — Provenance & Archives",
-  "Week 13 — Archive or Delete?",
+  "Week 1: final_FINAL_revised2",
+  "Week 2: What Is a File?",
+  "Week 3: Copies & Clones",
+  "Week 4: Save As",
+  "Week 5: Before Git",
+  "Week 6: The Diff",
+  "Week 7: Merge Conflict",
+  "Week 8: The Canonical Version",
+  "Week 9: Sync Is a Lie",
+  "Week 10: Conversion Damage",
+  "Week 11: Forensic Versioning",
+  "Week 12: Provenance & Archives",
+  "Week 13: Archive or Delete?",
 ];
 
 const versionB = [
-  "Week 1 — final_FINAL_revised2",
-  "Week 2 — What Is a File?",
-  "Week 3 — Copies & Clones",
-  "Week 4 — Save As",
-  "Week 5 — Before Git",
-  "Week 6 — The Diff",
-  "Week 7 — Merge Conflict",
-  "Week 8 — The Canonical Version",
-  "Week 9 — Sync Is a Lie",
-  "Week 10 — Conversion Damage",
-  "Week 11 — Provenance & Forensics",
-  "Week 12 — Archive or Delete?",
+  "Week 1: final_FINAL_revised2",
+  "Week 2: What Is a File?",
+  "Week 3: Copies & Clones",
+  "Week 4: Save As",
+  "Week 5: Before Git",
+  "Week 6: The Diff",
+  "Week 7: Merge Conflict",
+  "Week 8: The Canonical Version",
+  "Week 9: Sync Is a Lie",
+  "Week 10: Conversion Damage",
+  "Week 11: Provenance & Forensics",
+  "Week 12: Archive or Delete?",
 ];
 
 type Op = "keep" | "add" | "remove";
@@ -101,7 +101,7 @@ const opLabel: Record<Op, string> = { keep: "unchanged", add: "added", remove: "
   <p class="diff-viewer-note">
     The week list as first published, and as it stands now. Switch between the
     two versions and the difference between them. The comparison is computed
-    from the two lists by the method described in the lecture — no line is
+    from the two lists by the method described in the lecture. No line is
     marked by hand.
   </p>
 
@@ -132,7 +132,7 @@ const opLabel: Record<Op, string> = { keep: "unchanged", add: "added", remove: "
   <p class="diff-viewer-note">
     Three lines removed and two added, for a revision a person would describe
     in one clause: two weeks were merged into one. The comparison cannot say
-    that. It also cannot say that <em>Archive or Delete?</em> did not change —
+    that. It also cannot say that <em>Archive or Delete?</em> did not change:
     that week was renumbered from 13 to 12, and a renumbered line is a
     different line, so the diff reports it as a deletion and an addition. One
     of the five differences below is not a difference. Nothing in the output
@@ -158,8 +158,8 @@ const opLabel: Record<Op, string> = { keep: "unchanged", add: "added", remove: "
 
       const plural = (n: number) => (n === 1 ? "" : "s");
       const summaries: Record<string, string> = {
-        a: `Version 1.0 — ${lines.length - counts.add} line${plural(lines.length - counts.add)}.`,
-        b: `Version 2.0 — ${lines.length - counts.remove} line${plural(lines.length - counts.remove)}.`,
+        a: `Version 1.0: ${lines.length - counts.add} line${plural(lines.length - counts.add)}.`,
+        b: `Version 2.0: ${lines.length - counts.remove} line${plural(lines.length - counts.remove)}.`,
         diff: `${counts.remove} line${plural(counts.remove)} removed, ${counts.add} added.`,
       };
 

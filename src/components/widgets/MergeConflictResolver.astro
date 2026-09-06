@@ -31,7 +31,7 @@ const conflicts: Conflict[] = [
       "The committee met on 14 March, and reviewed the four tender submissions received before the deadline.",
     kind: "mechanical",
     afterNote:
-      "Compatible. One side added detail the other did not contradict — the count, and the qualification about the deadline. Nothing has to be discarded, and a keep-both resolution is legitimate here in a way it is not below. The conflict exists because both edits landed on one line, not because the versions disagree.",
+      "Compatible. One side added detail the other did not contradict: the count, and the qualification about the deadline. Nothing has to be discarded, and a keep-both resolution is legitimate here in a way it is not below. The conflict exists because both edits landed on one line, not because the versions disagree.",
   },
   {
     id: "two",
@@ -40,7 +40,7 @@ const conflicts: Conflict[] = [
     theirs: "The committee noted the findings and deferred a decision to the April meeting.",
     kind: "substantive",
     afterNote:
-      "Incompatible, and about a matter of fact. Accepted without amendment and deferred to April cannot both be what happened. Keeping both produces a document that contradicts itself; splitting the difference produces a record of a meeting that did not occur. This one cannot be resolved from the text at all — it needs the minutes, and the correct resolution may be to mark it unresolved and say what evidence would settle it.",
+      "Incompatible, and about a matter of fact. Accepted without amendment and deferred to April cannot both be what happened. Keeping both produces a document that contradicts itself; splitting the difference produces a record of a meeting that did not occur. This one cannot be resolved from the text at all: it needs the minutes, and the correct resolution may be to mark it unresolved and say what evidence would settle it.",
   },
   {
     id: "three",
@@ -50,7 +50,7 @@ const conflicts: Conflict[] = [
     theirs: "We recommend the proposal proceed.",
     kind: "defensible either way",
     afterNote:
-      "Both versions are defensible and the choice has consequences. The longer one is precise and binds the recommendation to conditions a reader must go and find. The shorter one is a clean recommendation that quietly drops the conditions. Whichever you kept, a reader lost something — either the conditions, or the ability to read the recommendation on its own. This is the kind of decision the assessment's rationale exists to record.",
+      "Both versions are defensible and the choice has consequences. The longer one is precise and binds the recommendation to conditions a reader must go and find. The shorter one is a clean recommendation that quietly drops the conditions. Whichever you kept, a reader lost something: either the conditions, or the ability to read the recommendation on its own. This is the kind of decision the assessment's rationale exists to record.",
   },
 ];
 ---
@@ -61,7 +61,7 @@ const conflicts: Conflict[] = [
     Two people edited the same committee report independently. Most of their
     edits combined without incident. These three did not. For each one, choose
     what the merged document should say and write the reason. The reason is
-    required — the widget will not record a resolution without one, on the
+    required. The widget will not record a resolution without one, on the
     grounds the lecture gives: the merged file preserves what survived and
     nothing about why.
   </p>
@@ -106,7 +106,7 @@ ${conflict.theirs}
 
         <p class="mcr-field">
           <label for={`mcr-reason-${conflict.id}`}>
-            Reason — what you kept, what you cut, and on what ground
+            Reason: what you kept, what you cut, and on what ground
           </label>
           <textarea id={`mcr-reason-${conflict.id}`} rows="3" data-reason></textarea>
         </p>
@@ -210,7 +210,7 @@ ${conflict.theirs}
               return;
             }
           } else if (chosen.value === "unresolved") {
-            text = "[unresolved — see rationale]";
+            text = "[unresolved: see rationale]";
           } else {
             text = chosen.dataset.text ?? "";
           }
@@ -234,7 +234,7 @@ ${conflict.theirs}
           await navigator.clipboard.writeText(transcript.textContent ?? "");
           copied.textContent = "Copied.";
         } catch {
-          copied.textContent = "Copy failed — select the text above instead.";
+          copied.textContent = "Copy failed. Select the text above instead.";
         }
       });
     }

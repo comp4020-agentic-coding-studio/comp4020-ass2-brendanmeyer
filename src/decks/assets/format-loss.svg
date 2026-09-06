@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" role="img" aria-labelledby="fl-title fl-desc">
   <title id="fl-title">What survives each step of a conversion chain</title>
-  <desc id="fl-desc">Five properties — comments, revisions, styles, layout, and authored characters — tracked across DOCX, PDF, OCR and TXT. Each property is carried at first and drops out at some step, and none is ever restored by a later step.</desc>
+  <desc id="fl-desc">Five properties (comments, revisions, styles, layout, and authored characters) tracked across DOCX, PDF, OCR and TXT. Each property is carried at first and drops out at some step, and none is ever restored by a later step.</desc>
 
   <g font-family="Public Sans, sans-serif" font-size="17" fill="#d8d4cc" text-anchor="end">
     <text x="176" y="106">comments</text>
