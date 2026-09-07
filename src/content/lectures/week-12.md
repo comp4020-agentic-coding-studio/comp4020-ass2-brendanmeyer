@@ -6,10 +6,12 @@ description:
 week: 12
 date: 2027-05-10
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-12/
-version: "1.1"
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Teaching staff reassigned; the material is unchanged.
   - version: "1.0"
     note: House style applied retroactively.
 related:

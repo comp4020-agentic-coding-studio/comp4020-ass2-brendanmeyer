@@ -6,9 +6,11 @@ description:
 week: 9
 date: 2027-04-19
 teachers:
-  - marisol-quaye
-version: "1.1"
+  - naledi-mokoena
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Teaching staff reassigned, and the worked example's name updated to match.
   - version: "1.0"
     note: Cleaned up sentence by sentence; nothing substantive changed.
 spec:

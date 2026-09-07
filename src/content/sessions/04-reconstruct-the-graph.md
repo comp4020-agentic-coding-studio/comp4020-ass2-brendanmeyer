@@ -6,9 +6,11 @@ description:
 week: 4
 date: 2027-03-15
 teachers:
-  - idris-fenn
-version: "1.1"
+  - dashiell-petrov
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Teaching staff reassigned; the material is unchanged.
   - version: "1.0"
     note: A late style pass, applied after publication.
 spec:

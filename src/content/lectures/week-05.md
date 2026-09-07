@@ -6,10 +6,12 @@ description:
 week: 5
 date: 2027-03-22
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-05/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "2.0"
     note: Cleaned up for consistency with the rest of the site.
   - version: "1.0"

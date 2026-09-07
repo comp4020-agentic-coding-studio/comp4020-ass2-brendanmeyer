@@ -6,10 +6,12 @@ description:
 week: 7
 date: 2027-04-05
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-07/
-version: "1.1"
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Updated to name the current teaching staff.
   - version: "1.0"
     note: Minor copyedit; no change to the claims made.
 related:

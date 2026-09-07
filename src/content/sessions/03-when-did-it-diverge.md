@@ -6,9 +6,11 @@ description:
 week: 3
 date: 2027-03-08
 teachers:
-  - marisol-quaye
-version: "1.1"
+  - naledi-mokoena
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Updated to name the current teaching staff.
   - version: "1.0"
     note: Punctuation updated to match the rest of the course.
 spec:

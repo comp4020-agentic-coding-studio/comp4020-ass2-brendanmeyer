@@ -6,10 +6,12 @@ description:
 week: 9
 date: 2027-04-19
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-09/
-version: "1.1"
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Teaching staff reassigned, and the worked example's name updated to match.
   - version: "1.0"
     note: Retouched for consistency, not correctness.
 related:
@@ -43,7 +45,7 @@ person it came from:
 
 ```text
 budget.xlsx
-budget (Marisol's conflicted copy 2027-04-14).xlsx
+budget (Naledi's conflicted copy 2027-04-14).xlsx
 ```
 
 That second file is not a malfunction. It is the service correctly reporting

@@ -6,10 +6,12 @@ description:
 week: 1
 date: 2027-02-22
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-01/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Teaching staff reassigned; the material is unchanged.
   - version: "2.0"
     note: Copyedited for house style.
   - version: "1.0"

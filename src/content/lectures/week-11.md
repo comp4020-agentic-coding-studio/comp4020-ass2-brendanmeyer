@@ -6,10 +6,12 @@ description:
 week: 11
 date: 2027-05-03
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-11/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Updated to name the current teaching staff.
   - version: "2.0"
     note: Text tightened; nothing substantive changed.
   - version: "1.0"

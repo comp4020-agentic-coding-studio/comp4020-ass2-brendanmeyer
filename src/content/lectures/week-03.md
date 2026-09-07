@@ -6,10 +6,12 @@ description:
 week: 3
 date: 2027-03-08
 teachers:
-  - marisol-quaye
+  - naledi-mokoena
 slides: /decks/week-03/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Updated to name the current teaching staff.
   - version: "2.0"
     note: Brought into line with the site's current style.
   - version: "1.0"

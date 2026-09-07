@@ -6,10 +6,12 @@ description:
 week: 8
 date: 2027-04-12
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-08/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Teaching staff reassigned; the material is unchanged.
   - version: "2.0"
     note: Sentence-level cleanup; no change in meaning.
   - version: "1.0"

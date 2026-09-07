@@ -6,9 +6,11 @@ description:
 week: 12
 date: 2027-05-10
 teachers:
-  - idris-fenn
-version: "1.1"
+  - dashiell-petrov
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "1.0"
     note: Copyedited; the policy asked for stands as before.
 spec:

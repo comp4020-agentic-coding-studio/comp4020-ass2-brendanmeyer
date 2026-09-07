@@ -6,9 +6,11 @@ description:
 week: 2
 date: 2027-03-01
 teachers:
-  - idris-fenn
-version: "1.1"
+  - dashiell-petrov
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "1.0"
     note: Style correction only.
 spec:

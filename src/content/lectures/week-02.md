@@ -7,10 +7,12 @@ description:
 week: 2
 date: 2027-03-01
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-02/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "2.0"
     note: Punctuation revised; the argument is unchanged.
   - version: "1.0"

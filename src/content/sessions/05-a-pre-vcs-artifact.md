@@ -6,9 +6,11 @@ description:
 week: 5
 date: 2027-03-22
 teachers:
-  - marisol-quaye
-version: "1.1"
+  - naledi-mokoena
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "1.0"
     note: Brought up to the site's current style.
 spec:

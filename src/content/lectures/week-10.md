@@ -6,10 +6,12 @@ description:
 week: 10
 date: 2027-04-26
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-10/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Reassigned to different teaching staff; content unchanged.
   - version: "2.0"
     note: Punctuation standardised across the page.
   - version: "1.0"

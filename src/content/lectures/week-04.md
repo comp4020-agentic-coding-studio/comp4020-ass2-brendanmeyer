@@ -6,10 +6,12 @@ description:
 week: 4
 date: 2027-03-15
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-04/
-version: "2.1"
+version: "2.2"
 revisions:
+  - version: "2.1"
+    note: Teaching staff reassigned, and the worked example's name updated to match.
   - version: "2.0"
     note: A style-only revision.
   - version: "1.0"
@@ -68,8 +70,8 @@ that you could reconstruct the diagram from the folder listing alone.
 
 What the listing cannot tell you is whether the diagram is true. The
 filenames record that a merge was claimed, not that one was performed:
-`MARISOL_MERGED` is a person's assertion about what they did, and if
-Marisol worked from the wrong copy the name says nothing about it. The graph
+`NALEDI_MERGED` is a person's assertion about what they did, and if
+Naledi worked from the wrong copy the name says nothing about it. The graph
 also stops being accurate the moment someone forgets which file was the merge
 target, edits the wrong one, or forwards the chain to a third person who was
 not there for any of it. A commit graph is recorded by the system that

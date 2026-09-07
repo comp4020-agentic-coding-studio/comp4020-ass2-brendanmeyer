@@ -6,9 +6,11 @@ description:
 week: 10
 date: 2027-04-26
 teachers:
-  - idris-fenn
-version: "1.1"
+  - dashiell-petrov
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Updated to name the current teaching staff.
   - version: "1.0"
     note: Editorial pass, punctuation only, not content.
 spec:

@@ -6,8 +6,12 @@ description:
 week: 6
 date: 2027-03-29
 teachers:
-  - idris-fenn
+  - dashiell-petrov
 slides: /decks/week-06/
+version: "1.1"
+revisions:
+  - version: "1.0"
+    note: Teaching staff reassigned; the material is unchanged.
 related:
   - sessions/06-reading-the-difference
 ---
