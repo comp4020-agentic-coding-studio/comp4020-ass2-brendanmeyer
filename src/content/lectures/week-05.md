@@ -8,8 +8,10 @@ date: 2027-03-22
 teachers:
   - naledi-mokoena
 slides: /decks/week-05/
-version: "2.3"
+version: "2.4"
 revisions:
+  - version: "2.3"
+    note: Spelling normalised to "formalised" for consistency with the rest of the site.
   - version: "2.2"
     note: Expanded the RCS and SCCS acronyms on first use.
   - version: "2.1"
@@ -44,7 +46,7 @@ hand. The tools looked nothing like a repository. The problem was identical.
 - **Redlining and Track Changes.** An explicit diff bolted onto a single
   document: every insertion and deletion marked, attributed to whoever made
   it, visible without needing a second copy to compare against. This is a
-  diff format, authored by hand, decades before software formalized one.
+  diff format, authored by hand, decades before software formalised one.
 - **RCS (Revision Control System) and SCCS (Source Code Control System)**,
   from the 1970s and 80s, were the first software to do
   all of this automatically: store a base version, record each change as a
