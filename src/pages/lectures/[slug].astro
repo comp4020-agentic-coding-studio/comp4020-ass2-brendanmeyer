@@ -31,5 +31,5 @@ const { version, revisions } = parseVersionMeta(lecture.data);
   {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
   <Content />
   <TeachingTeam teachers={lecture.data.teachers} />
-  <RelatedContent entry={lecture} collections={graphCollections} heading="This week's lab" />
+  <RelatedContent entry={lecture} collections={graphCollections} />
 </ContentLayout>
