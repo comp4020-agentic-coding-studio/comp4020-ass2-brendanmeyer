@@ -8,8 +8,10 @@ date: 2027-03-22
 teachers:
   - naledi-mokoena
 slides: /decks/week-05/
-version: "2.2"
+version: "2.3"
 revisions:
+  - version: "2.2"
+    note: Expanded the RCS and SCCS acronyms on first use.
   - version: "2.1"
     note: Reassigned to different teaching staff; content unchanged.
   - version: "2.0"
@@ -43,7 +45,8 @@ hand. The tools looked nothing like a repository. The problem was identical.
   document: every insertion and deletion marked, attributed to whoever made
   it, visible without needing a second copy to compare against. This is a
   diff format, authored by hand, decades before software formalized one.
-- **RCS and SCCS**, from the 1970s and 80s, were the first software to do
+- **RCS (Revision Control System) and SCCS (Source Code Control System)**,
+  from the 1970s and 80s, were the first software to do
   all of this automatically: store a base version, record each change as a
   delta, tag deltas with an author and a timestamp. Nothing here is a new
   idea. It's the first time a computer did the bookkeeping instead of a
