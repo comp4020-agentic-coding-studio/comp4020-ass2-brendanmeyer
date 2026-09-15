@@ -20,8 +20,10 @@ spec:
   - one file identified as authoritative, with the ground for that claim stated
   - at least one competing candidate addressed and ruled out on stated grounds
   - every inference marked as an inference, and every gap in the evidence marked as a gap
-version: "1.1"
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Added the download link for the real file package.
   - version: "1.0"
     note: Line-edited for consistency with the rest of the course.
 related:
@@ -36,12 +38,13 @@ Follows week 6. Due 5pm Friday of week 7.
 > You are given the contents of one folder. Reconstruct what happened to it,
 > then say which file is the real one and why.
 
-The package contains a proposal in several states: `proposal.docx`,
-`proposal_final.docx`, `proposal_final2.docx`, `proposal_FIXED.docx`, two
-PDFs, an autosave artefact, a screenshot, and a file that arrived as an email
-attachment. The metadata is intact and it is not consistent. Some of it was
-produced by ordinary work and some by copying, syncing and exporting. Nothing
-in the package is labelled.
+Download the [file package](/assessments/which-one-is-real/package.zip). It
+contains an incident report in several states, across two people's file
+systems: several `.docx` revisions, two PDFs, an autosave artefact, a
+screenshot, a lock file, and a copy that arrived as an email attachment. The
+metadata is intact and it is not consistent. Some of it was produced by
+ordinary work and some by copying, syncing and exporting. Nothing in the
+package is labelled.
 
 Two things are being assessed and they are separable. The timeline is
 forensic: what happened, in what order, supported by timestamps, formats,
