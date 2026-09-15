@@ -7,8 +7,10 @@ week: 6
 date: 2027-03-29
 teachers:
   - dashiell-petrov
-version: "1.4"
+version: "1.5"
 revisions:
+  - version: "1.4"
+    note: Put the exercise-one answer behind a reveal instead of leaving it in the open prose.
   - version: "1.3"
     note: Added the worked answer for what the diff reports and cannot report.
   - version: "1.2"
@@ -25,6 +27,7 @@ spec:
 
 import DiffViewer from "../../components/widgets/DiffViewer.astro";
 import WhichFileIsCurrent from "../../components/widgets/WhichFileIsCurrent.astro";
+import AnswerReveal from "../../components/AnswerReveal.astro";
 
 This lab is two exercises, both done here on the page. There is nothing to
 bring. Work through them in order: the second one depends on having seen
@@ -44,14 +47,16 @@ cannot report: read the version header on the [syllabus](/syllabus/) and
 compare what a person wrote about that revision with what the comparison
 produced. The gap between the two is the subject of this week.
 
-For reference: the diff reports five lines changed, three removed and two
-added, and that count is accurate and reproducible by anyone who reruns the
-same comparison on the same two lists. What it cannot report is why. The
-syllabus's own version header says the two removed weeks, Forensic
-Versioning and Provenance & Archives, were merged because they were
-"the same work looked at from two directions, not two topics." Nothing in
-either week list states a relationship like that between two lines. String
-equality has no way to represent it.
+<AnswerReveal>
+  The diff reports five lines changed, three removed and two added, and that
+  count is accurate and reproducible by anyone who reruns the same comparison
+  on the same two lists. What it cannot report is why. The syllabus's own
+  version header says the two removed weeks, Forensic Versioning and
+  Provenance & Archives, were merged because they were "the same work looked
+  at from two directions, not two topics." Nothing in either week list states
+  a relationship like that between two lines. String equality has no way to
+  represent it.
+</AnswerReveal>
 
 One of the five differences it reports is not a difference. Find it before
 you read the note underneath, and say what would have to change about the
