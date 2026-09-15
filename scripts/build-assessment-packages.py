@@ -405,8 +405,106 @@ def build_which_one_is_real() -> None:
     print(f"wrote {zip_path} ({zip_path.stat().st_size} bytes, {len(pkg.files)} files)")
 
 
+# --------------------------------------------------------------------------
+# "Merge Conflict, In Writing" — the Lab Safety Policy package
+# --------------------------------------------------------------------------
+
+
+def build_merge_conflict() -> None:
+    coordinator = "Workshop Coordinator"
+    chen = "R. Chen"
+    devereux = "A. Devereux"
+    title = "Workshop Lab Safety Policy"
+
+    source_paragraphs = [
+        "Workshop Lab Safety Policy",
+        "This policy applies to all use of Workshop 1 and Workshop 2 equipment by "
+        "students, staff and visitors.",
+        "Closed-toe footwear and safety glasses are required at all times when "
+        "equipment is in operation.",
+        "Each piece of powered equipment requires a supervisor sign-off before "
+        "first use by a student.",
+        "This policy takes effect at the start of the next teaching period.",
+        "Any equipment fault or near-miss must be reported to the workshop "
+        "supervisor within 24 hours.",
+        "Exception: postgraduate researchers with prior certification from an "
+        "equivalent facility may be exempted from the sign-off requirement, at "
+        "the discretion of the workshop supervisor.",
+        "Questions about this policy should be directed to the Workshop "
+        "Coordinator.",
+    ]
+
+    chen_paragraphs = [
+        "Workshop Lab Safety Policy",
+        "This policy applies to all use of Workshop 1 and Workshop 2 equipment by "
+        "students, staff and visitors.",
+        "Closed-toe footwear and safety glasses are required at all times when "
+        "equipment is in operation.",
+        # Conflict 1 (mechanical): compatible addition, same sentence as Devereux's.
+        "Each piece of powered equipment requires a supervisor sign-off before "
+        "first use by a student, recorded in the workshop logbook.",
+        # Conflict 2 (substantive): incompatible with Devereux's effective date.
+        "This policy takes effect immediately.",
+        "Any equipment fault or near-miss must be reported to the workshop "
+        "supervisor within 24 hours, using the incident report form.",
+        # Conflict 3 (defensible either way): Chen cuts the exception for brevity.
+        "Questions about this policy should be directed to the Workshop "
+        "Coordinator.",
+    ]
+
+    devereux_paragraphs = [
+        "Workshop Lab Safety Policy",
+        "This policy applies to all use of Workshop 1 and Workshop 2 equipment, "
+        "including short-course and community-education enrolments, by students, "
+        "staff and visitors.",
+        "Closed-toe footwear and safety glasses are required at all times when "
+        "equipment is in operation.",
+        # Conflict 1 (mechanical): compatible addition, same sentence as Chen's.
+        "Each piece of powered equipment requires a supervisor sign-off before "
+        "first use by a student, valid for the current semester only.",
+        # Conflict 2 (substantive): incompatible with Chen's effective date.
+        "This policy takes effect from the start of Semester 2, 2027.",
+        "Any equipment fault or near-miss must be reported to the workshop "
+        "supervisor within 24 hours.",
+        # Conflict 3 (defensible either way): Devereux keeps the exception.
+        "Exception: postgraduate researchers with prior certification from an "
+        "equivalent facility may be exempted from the sign-off requirement, at "
+        "the discretion of the workshop supervisor.",
+        "Questions about this policy should be directed to the Workshop "
+        "Coordinator, workshop-coordinator@example.edu.",
+    ]
+
+    pkg = Package(slug="merge-conflict-in-writing")
+    pkg.files.append(
+        PackageFile(
+            "policy-source.docx",
+            make_docx(source_paragraphs, coordinator, datetime(2027, 3, 1, 10, 0), datetime(2027, 3, 1, 10, 0), title),
+            datetime(2027, 3, 1, 10, 0),
+        )
+    )
+    pkg.files.append(
+        PackageFile(
+            "policy-revision-chen.docx",
+            make_docx(chen_paragraphs, chen, datetime(2027, 3, 1, 10, 0), datetime(2027, 3, 4, 11, 15), title),
+            datetime(2027, 3, 4, 11, 15),
+        )
+    )
+    pkg.files.append(
+        PackageFile(
+            "policy-revision-devereux.docx",
+            make_docx(devereux_paragraphs, devereux, datetime(2027, 3, 1, 10, 0), datetime(2027, 3, 4, 16, 40), title),
+            datetime(2027, 3, 4, 16, 40),
+        )
+    )
+
+    zip_path = write_package(pkg)
+    set_mtime(zip_path, datetime(2027, 3, 4, 16, 40))
+    print(f"wrote {zip_path} ({zip_path.stat().st_size} bytes, {len(pkg.files)} files)")
+
+
 def main() -> None:
     build_which_one_is_real()
+    build_merge_conflict()
 
 
 if __name__ == "__main__":

@@ -20,8 +20,10 @@ spec:
   - a rationale addressing every conflict, stating what was kept, what was cut, and the ground for each
   - each conflict classified as mechanical or substantive
   - at least one decision where both sides were defensible, with the reason for the choice stated
-version: "1.1"
+version: "1.2"
 revisions:
+  - version: "1.1"
+    note: Added the download link for the real file package.
   - version: "1.0"
     note: Punctuation brought into line with the rest of the site.
 related:
@@ -36,9 +38,10 @@ Set in week 7. Due 5pm Friday of week 8.
 > Two versions of one document. Both sets of edits are legitimate. Produce
 > one document, and account for every decision you made to get there.
 
-You receive a source document and two revisions of it, made independently.
-Most of the edits do not overlap and combining them is arithmetic. A few
-touch the same passage in incompatible ways. Those are the assessment.
+Download the [file package](/assessments/merge-conflict-in-writing/package.zip):
+a source document and two revisions of it, made independently. Most of the
+edits do not overlap and combining them is arithmetic. A few touch the same
+passage in incompatible ways. Those are the assessment.
 
 The rationale is the deliverable. A mechanically correct merge submitted
 without one does not meet the brief, and will be marked as though the
