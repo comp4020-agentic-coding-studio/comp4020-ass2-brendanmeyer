@@ -7,6 +7,8 @@ affiliation: Slop University School of Invented Disciplines
 role: tutor
 email: priya.osei@slop.university
 contact: Bring the files, not a description of the files. The clinic runs Wednesdays; email to book a slot.
+photo: ./priya-osei.avif
+photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
 Runs the file clinic: a walk-in slot where a student brings a real

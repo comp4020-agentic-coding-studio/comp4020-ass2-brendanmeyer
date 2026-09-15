@@ -7,6 +7,8 @@ affiliation: Slop University School of Invented Disciplines
 role: tutor
 email: tomas.vidor@slop.university
 contact: Email with the conversion chain you used and the step where it broke. Include the intermediate files; a description of what changed is not evidence of what changed.
+photo: ./tomas-vidor.avif
+photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
 Builds and re-runs the DOCX-to-PDF-to-OCR-to-TXT chain students are handed

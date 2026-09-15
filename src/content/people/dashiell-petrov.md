@@ -7,6 +7,8 @@ affiliation: Slop University School of Invented Disciplines
 role: tutor
 email: dashiell.petrov@slop.university
 contact: Ask in the lab first. Email when a question cannot wait until the next one, and name the file you are asking about.
+photo: ./dashiell-petrov.avif
+photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
 Tutor, and lecturer for the even-numbered weeks: file identity, Save As,
