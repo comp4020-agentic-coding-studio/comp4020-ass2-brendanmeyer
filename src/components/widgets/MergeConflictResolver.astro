@@ -13,6 +13,8 @@
 // the two versions make incompatible claims of fact, and one where both are
 // defensible and something is lost either way.
 
+const MIN_REASON_LENGTH = 15;
+
 interface Conflict {
   id: string;
   context: string;
@@ -108,7 +110,15 @@ ${conflict.theirs}
           <label for={`mcr-reason-${conflict.id}`}>
             Reason: what you kept, what you cut, and on what ground
           </label>
-          <textarea id={`mcr-reason-${conflict.id}`} rows="3" data-reason></textarea>
+          <textarea
+            id={`mcr-reason-${conflict.id}`}
+            rows="3"
+            data-reason
+            data-min-length={MIN_REASON_LENGTH}
+          ></textarea>
+          <span class="mcr-char-count" data-char-count aria-live="polite">
+            0 / {MIN_REASON_LENGTH} characters minimum
+          </span>
         </p>
 
         <p class="mcr-status" data-status role="status"></p>
@@ -176,7 +186,18 @@ ${conflict.theirs}
         const status = conflict.querySelector<HTMLElement>("[data-status]");
         const after = conflict.querySelector<HTMLElement>("[data-after]");
         const record = conflict.querySelector<HTMLButtonElement>("[data-record]");
+        const charCount = conflict.querySelector<HTMLElement>("[data-char-count]");
         const heading = conflict.querySelector("h4")?.textContent?.trim() ?? "Conflict";
+        const minLength = Number(reason?.dataset.minLength ?? 0);
+
+        const updateCharCount = () => {
+          if (!charCount) return;
+          const length = reason?.value.trim().length ?? 0;
+          charCount.textContent = `${length} / ${minLength} characters minimum`;
+          charCount.classList.toggle("mcr-char-count--met", length >= minLength);
+        };
+
+        reason?.addEventListener("input", updateCharCount);
 
         for (const radio of radios) {
           radio.addEventListener("change", () => {
@@ -192,7 +213,7 @@ ${conflict.theirs}
             if (status) status.textContent = "Choose a resolution first.";
             return;
           }
-          if (reasonText.length < 15) {
+          if (reasonText.length < minLength) {
             if (status) {
               status.textContent =
                 "A reason is required before this resolution is recorded. Say what you kept, what you cut, and on what ground.";
@@ -341,6 +362,17 @@ ${conflict.theirs}
 
   .mcr button:hover {
     background: var(--at-primary-tint, var(--at-bg-elevated));
+  }
+
+  .mcr-char-count {
+    align-self: flex-end;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+  }
+
+  .mcr-char-count--met {
+    color: var(--at-success);
   }
 
   .mcr-status,
