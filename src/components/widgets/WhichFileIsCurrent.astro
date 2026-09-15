@@ -128,6 +128,8 @@ const answer = candidates.find((candidate) => candidate.verdict === "authoritati
       </ol>
     </fieldset>
 
+    <p class="wfic-prompt" data-wfic-prompt>Choose before you reveal the reasoning.</p>
+
     <button type="submit" class="wfic-submit">Show the reasoning</button>
   </form>
 
@@ -175,6 +177,8 @@ const answer = candidates.find((candidate) => candidate.verdict === "authoritati
         result.hidden = false;
         const submit = form.querySelector<HTMLButtonElement>(".wfic-submit");
         if (submit) submit.hidden = true;
+        const prompt = form.querySelector<HTMLElement>("[data-wfic-prompt]");
+        if (prompt) prompt.hidden = true;
         result.focus();
       });
     }
@@ -272,6 +276,12 @@ const answer = candidates.find((candidate) => candidate.verdict === "authoritati
     font-size: var(--at-font-size-xs);
     letter-spacing: 0.04em;
     text-transform: uppercase;
+  }
+
+  .wfic-prompt {
+    margin-block: 0 0.75rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
   }
 
   .wfic-submit {
