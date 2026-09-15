@@ -1,9 +1,5 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
 Written by you, for a reader: how you got from the brief to the harness and
 agentic workflow behind this submission. Markers read this file and follow its
 citations; they don't trawl the repo for evidence you didn't point at.
@@ -28,9 +24,7 @@ Cite the record as you go, as links whose text is the commit hash or range and
 whose target is this repo's commit or compare URL, so a reader clicks straight
 to the evidence:
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+- one commit: [`3af45ba`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-brendanmeyer/commit/3af45ba)
 
 To pair a prompt with the commit it produced, quote the prompt (curated, not a
 full transcript) next to the citation:
