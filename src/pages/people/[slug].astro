@@ -72,3 +72,12 @@ const description = person.data.description;
 
   <Content />
 </ContentLayout>
+
+<style>
+  /* The portraits are head-and-shoulders compositions, but the hero band is
+     wide and short; a centered object-position crops in on the chin and
+     collar rather than the face. Bias the crop toward the eyes instead. */
+  :global(.at-hero-image) {
+    object-position: center 30%;
+  }
+</style>
